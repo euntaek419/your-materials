@@ -1,13 +1,18 @@
 <template>
-  <your-materials></your-materials>
+  <div>
+    <div>
+      <your-materials></your-materials>
+    </div>
+
+  </div>
 </template>
 
 <script>
-import YourMaterials from './components/your-materials.vue'
+import YourMaterials from '@/components/your-materials.vue'
 
 export default {
   components: {
-    YourMaterials
+    YourMaterials,
   }
 }
 </script>
