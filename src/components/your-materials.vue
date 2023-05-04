@@ -1,8 +1,5 @@
 <template>
   <div id="wrapper">
-    <div id="title">
-      <h1>너의 재료는?</h1>
-    </div>
 
     <div id="body">
       <!-- <div>
@@ -59,6 +56,7 @@
 </template>
 
 <script>
+
 export default {
   data: () => {
     return {
