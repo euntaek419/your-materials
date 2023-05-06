@@ -48,8 +48,10 @@ export default {
 }
 
 body,html,#app{
+  font-family: 'GmarketSansTTFMedium';
+  color: #0c0342;
   background-color: #e1e1e1;
-  padding: 0 0 74px;
-  object-fit: contain;
+  padding: 0 0 80px;
+  text-align: center;
 }
 </style>

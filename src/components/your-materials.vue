@@ -1,7 +1,7 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper" class="wrapper">
 
-    <div id="body">
+    <div id="body" class="body">
       <!-- <div>
         <input id="pc_room" type="checkbox" >
         <label for="pc_room">PC방</label>
@@ -12,13 +12,13 @@
       
       <div>
         <div>
-          <label for="input_ispins_material">보유한 사방의 분열된 기운 : </label>
-          <input id="input_ispins_material" v-model="input_ispins_material" v-bind:keyup="NeedMaterialCalculation">
+          <label for="input_ispins_material">보유한 재료 </label>
+          <input id="input_ispins_material" class="material_input" v-model="input_ispins_material" v-bind:keyup="NeedMaterialCalculation">
         </div>
 
         <div>
-          <label for="input_ispins_need_material">필요한 이스핀즈 융합 부위 : </label>
-          <input id="input_ispins_need_material" v-model="input_ispins_need_material">
+          <label for="input_ispins_need_material">융합 부위 </label>
+          <input id="input_ispins_need_material" class="mini_input" v-model="input_ispins_need_material">
         </div>
 
         <!-- <div>
@@ -35,22 +35,6 @@
       <div>필요한 폭룡왕의 인장 : <input></div>
       <div>개전 배럭 캐릭터 갯수 : <input></div>
       <div>바칼 배럭 캐릭터 갯수 : <input v-model="bc_baakl"></div> -->
-    </div>
-
-    <div id="footer">
-      <div>
-        <div v-if=" input_ispins_material == '' || input_ispins_need_material == '' || input_ispins_need_material == 0 ">
-          유효한 값을 입력해주세요.
-        </div>
-
-        <div v-else-if=" input_ispins_material <= need_material[0] * input_ispins_need_material" >
-          필요한 재료는 {{ Math.abs((input_ispins_material - need_material[0] * input_ispins_need_material)) }} 개 이며, {{ NeedMaterialCalculation() }}주 뒤 가능합니다.
-        </div>
-
-        <div v-else>
-          현재 제작 가능하며, 남은 재료는 {{  Math.abs( input_ispins_material - need_material[0] ) }} 개 입니다.
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -90,4 +74,33 @@ export default {
 </script>
 
 <style scoped>
+.body{
+  font-size: 20px;
+}
+
+
+.material_input{
+  background-color: #efefef;
+  box-shadow: 7.8px 7.8px 43px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 21.5px;
+  object-fit: contain;
+  width: 400px;
+  height: 35px;
+  outline:none;
+  border:none;
+  text-align: center;
+}
+
+.mini_input{
+  background-color: #efefef;
+  box-shadow: 7.8px 7.8px 43px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 21.5px;
+  object-fit: contain;
+  width: 133px;
+  height: 43px;
+  outline:none;
+  border:none;
+}
+
+
 </style>
