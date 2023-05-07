@@ -3,15 +3,17 @@
 
     <div id="body" class="body">
         
-        <img class="item" v-if="on_material[0] == 0" @click="on_material[0] = 1" src="../assets/images/material0_off.png">
-        <img class="item" v-if="on_material[1] == 0" @click="on_material[1] = 1" src="../assets/images/material1_off.png">
-        <img class="item" v-if="on_material[2] == 0" @click="on_material[2] = 1" src="../assets/images/material2_off.png">
-        <img class="item" v-if="on_material[3] == 0" @click="on_material[3] = 1" src="../assets/images/material3_off.png">
+        <img class="item" v-if="on_material0 == 0" @click="on_material0 = 1" src="../assets/images/material0_off.png">
+        <img class="item" v-if="on_material0 == 1" @click="on_material0 = 0" src="../assets/images/material0.png">
 
-        <img class="item" v-if="on_material[0] == 1" @click="on_material[0] = 0" src="../assets/images/material0.png">
-        <img class="item" v-if="on_material[1] == 1" @click="on_material[1] = 0" src="../assets/images/material1.png">
-        <img class="item" v-if="on_material[2] == 1" @click="on_material[2] = 0" src="../assets/images/material2.png">
-        <img class="item" v-if="on_material[3] == 1" @click="on_material[3] = 0" src="../assets/images/material3.png">
+        <img class="item" v-if="on_material1 == 0" @click="on_material1 = 1" src="../assets/images/material1_off.png">
+        <img class="item" v-if="on_material1 == 1" @click="on_material1 = 0" src="../assets/images/material1.png">
+
+        <img class="item" v-if="on_material2 == 0" @click="on_material2 = 1" src="../assets/images/material2_off.png">
+        <img class="item" v-if="on_material2 == 1" @click="on_material2 = 0" src="../assets/images/material2.png">
+
+        <img class="item" v-if="on_material3 == 0" @click="on_material3 = 1" src="../assets/images/material3_off.png">
+        <img class="item" v-if="on_material3 == 1" @click="on_material3 = 0" src="../assets/images/material3.png">
 
 
       
@@ -57,7 +59,10 @@
 export default {
   data: () => {
     return {
-      on_material : [0,0,0,0],
+      on_material0 : 0,
+      on_material1 : 0,
+      on_material2 : 0,
+      on_material3 : 0,
       need_material : [480, 360, 456], // 필요한 재료
       need_material_user : '', // 유저에게 필요한 재료
       date: 0, // 날짜
@@ -79,8 +84,9 @@ export default {
       return Math.ceil( Math.abs(this.input_ispins_material - this.need_material[0] ) * this.input_ispins_need_material / this.reward_material[0] );
     },
 
-     DateCalculation() {
-       
+    OnMaterial0() {
+      this.on_material[0] = 1
+      console.log(this.on_material[0]);
      }
   }
 }
