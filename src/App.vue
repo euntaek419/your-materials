@@ -7,10 +7,6 @@
     <div>
       <your-materials></your-materials>
     </div>
-
-    <div>
-      <Floating></Floating>
-    </div>
     
     <div>
       <Footer></Footer>
@@ -22,7 +18,6 @@
 import YourMaterials from '@/components/Your-materials';
 import Title from '@/components/Title';
 import Footer from '@/components/Footer';
-import Floating from '@/components/Floating';
 
 
 
@@ -31,7 +26,6 @@ export default {
     YourMaterials,
     Title,
     Footer,
-    Floating,
   }
 }
 </script>
@@ -54,4 +48,6 @@ body,html,#app{
   padding: 0 0 80px;
   text-align: center;
 }
+
+
 </style>

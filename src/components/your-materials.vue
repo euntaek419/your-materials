@@ -2,6 +2,19 @@
   <div id="wrapper" class="wrapper">
 
     <div id="body" class="body">
+        
+        <img class="item" v-if="on_material[0] == 0" @click="on_material[0] = 1" src="../assets/images/material0_off.png">
+        <img class="item" v-if="on_material[1] == 0" @click="on_material[1] = 1" src="../assets/images/material1_off.png">
+        <img class="item" v-if="on_material[2] == 0" @click="on_material[2] = 1" src="../assets/images/material2_off.png">
+        <img class="item" v-if="on_material[3] == 0" @click="on_material[3] = 1" src="../assets/images/material3_off.png">
+
+        <img class="item" v-if="on_material[0] == 1" @click="on_material[0] = 0" src="../assets/images/material0.png">
+        <img class="item" v-if="on_material[1] == 1" @click="on_material[1] = 0" src="../assets/images/material1.png">
+        <img class="item" v-if="on_material[2] == 1" @click="on_material[2] = 0" src="../assets/images/material2.png">
+        <img class="item" v-if="on_material[3] == 1" @click="on_material[3] = 0" src="../assets/images/material3.png">
+
+
+      
       <!-- <div>
         <input id="pc_room" type="checkbox" >
         <label for="pc_room">PC방</label>
@@ -44,6 +57,7 @@
 export default {
   data: () => {
     return {
+      on_material : [0,0,0,0],
       need_material : [480, 360, 456], // 필요한 재료
       need_material_user : '', // 유저에게 필요한 재료
       date: 0, // 날짜
@@ -56,7 +70,7 @@ export default {
       seb_reward_material: [48, 48, 23, 31], // 입력받은 캐릭터 개수 [이스핀즈,차원회랑,개전,바칼] //2단 6개, 3단 12개, 초월 12개
       pass: [12,9,11,15], // 패스 여부 & 갯수 [이스핀즈,차원회랑,개전,바칼]
       pcroom: [12,9,11,15], // 피시방 여부
-      possible: false, // 가능한지 불가능한지
+      ischoice: false, // 가능한지 불가능한지
       cal: '',
     };
   },
@@ -78,11 +92,14 @@ export default {
   font-size: 20px;
 }
 
-
 .material_input{
+  font-family: 'GmarketSansTTFMedium';
+  color: #0c0342;
   background-color: #efefef;
-  box-shadow: 7.8px 7.8px 43px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 21.5px;
+  font-size: 15px;
+
+  box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   object-fit: contain;
   width: 400px;
   height: 35px;
@@ -92,15 +109,25 @@ export default {
 }
 
 .mini_input{
+  font-family: 'GmarketSansTTFMedium';
+  color: #0c0342;
   background-color: #efefef;
-  box-shadow: 7.8px 7.8px 43px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 21.5px;
+  font-size: 15px;
+
+  box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   object-fit: contain;
-  width: 133px;
-  height: 43px;
+  width: 135px;
+  height: 35px;
   outline:none;
   border:none;
+  text-align: center;
 }
+
+.item{
+  margin:3px;
+}
+
 
 
 </style>

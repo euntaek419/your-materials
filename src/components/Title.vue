@@ -1,6 +1,6 @@
 <template>
 <div class="logo">
-  <img src="../assets/LOGO.gif">
+  <img src="../assets/images/LOGO.gif">
 </div>
 </template>
 
