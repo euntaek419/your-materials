@@ -5,10 +5,10 @@
     </div>
     
     <div>
-      <your-materials></your-materials>
+      <your-materials @resulture="resultrue"></your-materials>
     </div>
 
-    <div>
+    <div v-if="result == true">
       <Result></Result>
     </div>
     
@@ -27,11 +27,24 @@ import Result from '@/components/Result.vue'
 
 
 export default {
+  data: () => {
+    return {
+      result : false,
+    }
+  },
   components: {
     YourMaterials,
     Title,
     Footer,
     Result,
+  },
+  methods: {
+    resultrue(){
+      this.result = true;
+      setTimeout(function(){
+        window.scrollTo({ top: 3000, behavior: 'smooth' });
+      }, 100);
+    },
   }
 }
 </script>

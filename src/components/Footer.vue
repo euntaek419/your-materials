@@ -1,15 +1,17 @@
 <template>
   <div class="footer">
     <div class="footer_box">
-
-    <div class="t1">
+      
+      <div>
         Copyrightⓒ euntaek419 All rights reserved.
-    </div>
-    <div class="t1">
+      </div>
+      
+      <div>
         cet4713@naver.com
+      </div>
+
     </div>
   </div>
-    </div>
 </template>
 
 <script>
@@ -18,21 +20,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .footer {
-  height: 400px;
-  object-fit: contain;
-  font-family: 'GmarketSansTTFMedium';
-  font-size: 17px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  height: 300px;
+  font-size: 18px;
   text-align: center;
   color: #0c0342;
 
+  /* 중앙 정렬 */
   display: flex;
   justify-content: center;
   align-items: center;

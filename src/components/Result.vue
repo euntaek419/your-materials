@@ -2,15 +2,15 @@
   <div class="result" id="result">
     <div class="result_box">
       
-      <div class="t1">
+      <div>
         기계혁명:바칼레이드 / 융합 부위 5개의
       </div>
 
-      <div class="t1">
+      <div>
         필요한 재료는 0개 이며,
       </div>
 
-      <div class="t1">
+      <div>
         N주뒤 가능합니다.
       </div>
 

@@ -38,7 +38,7 @@
       </div>
 
       <div class="down_box">
-        <img src="../assets/images/down.png" class="down_btn">
+        <img src="../assets/images/down.png" class="down_btn" @click="$emit('resulture')">
       </div>
       
       <!-- <div>보유한 흐릿한 기억의 조각 : <input></div>
@@ -86,19 +86,24 @@ export default {
     OnMaterial0() {
       this.on_material[0] = 1
       console.log(this.on_material[0]);
-     }
+    },
   }
 }
 
 </script>
 
 <style scoped>
+.wrapper{
+  min-height: 80vh;
+}
+
 .body{
   font-size: 20px;
 }
 
 .add_box{
   height: 200px;
+  padding: 20px;
 }
 
 .add_btn{
@@ -162,6 +167,9 @@ export default {
   outline:none;
   border:none;
   text-align: center;
+  
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .down_box{
