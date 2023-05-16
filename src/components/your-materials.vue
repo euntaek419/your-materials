@@ -17,29 +17,28 @@
 
 
       
-      <!-- <div>
-        <input id="pc_room" type="checkbox" >
-        <label for="pc_room">PC방</label>
+      <div class="add_box">
+        <button id="pc_room" class="add_btn">PC방</button>
+        <button id="arad_pass" class="add_btn">아라드PASS</button>
+      </div>
       
-        <input id="arad_pass" type="checkbox" >
-        <label for="arad_pass">아라드PASS</label>
-      </div> -->
-      
-      <div>
+      <div class="input_box">
         <div>
           <label for="input_ispins_material">보유한 재료 </label>
           <input id="input_ispins_material" class="material_input" v-model="input_ispins_material" v-bind:keyup="NeedMaterialCalculation">
         </div>
 
-        <div>
+        <div class="mini_box">
           <label for="input_ispins_need_material">융합 부위 </label>
           <input id="input_ispins_need_material" class="mini_input" v-model="input_ispins_need_material">
-        </div>
 
-        <!-- <div>
-          <label for="input_ispins_character">이스핀즈 캐릭터 갯수 : </label>
-          <input id="input_ispins_character" v-model="input_ispins_character">
-        </div> -->
+          <label for="input_ispins_character">캐릭터 갯수 </label>
+          <input id="input_ispins_character" class="mini_input" v-model="input_ispins_character">
+        </div>
+      </div>
+
+      <div class="down_box">
+        <img src="../assets/images/down.png" class="down_btn">
       </div>
       
       <!-- <div>보유한 흐릿한 기억의 조각 : <input></div>
@@ -98,11 +97,42 @@ export default {
   font-size: 20px;
 }
 
+.add_box{
+  height: 200px;
+}
+
+.add_btn{
+  width: 170px;
+  height: 44px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color : #0c0342;
+  font-size: 15px;
+  outline: none;
+  border: none;
+
+  margin-left : 20px;
+  margin-right : 20px;
+}
+
+.add_btn:hover{
+  background-color: #0c0342;
+  color : white;
+  outline: none;
+  border: none;
+}
+
+.input_box{
+  height: 250px;
+}
+
 .material_input{
   font-family: 'GmarketSansTTFMedium';
   color: #0c0342;
   background-color: #efefef;
   font-size: 15px;
+  margin-left: 30px;
 
   box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -112,6 +142,10 @@ export default {
   outline:none;
   border:none;
   text-align: center;
+}
+
+.mini_box{
+  padding : 30px;
 }
 
 .mini_input{
@@ -128,6 +162,14 @@ export default {
   outline:none;
   border:none;
   text-align: center;
+}
+
+.down_box{
+  height: 100px;
+}
+
+.down_btn{
+  cursor: pointer;
 }
 
 .item{

@@ -1,12 +1,15 @@
 <template>
   <div class="footer">
-    <div>
+    <div class="footer_box">
+
+    <div class="t1">
         Copyrightⓒ euntaek419 All rights reserved.
     </div>
-    <div>
+    <div class="t1">
         cet4713@naver.com
     </div>
   </div>
+    </div>
 </template>
 
 <script>
@@ -18,6 +21,7 @@ export default {
 <style scoped>
 
 .footer {
+  height: 400px;
   object-fit: contain;
   font-family: 'GmarketSansTTFMedium';
   font-size: 17px;
@@ -28,5 +32,9 @@ export default {
   letter-spacing: normal;
   text-align: center;
   color: #0c0342;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

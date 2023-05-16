@@ -7,6 +7,10 @@
     <div>
       <your-materials></your-materials>
     </div>
+
+    <div>
+      <Result></Result>
+    </div>
     
     <div>
       <Footer></Footer>
@@ -15,9 +19,10 @@
 </template>
 
 <script>
-import YourMaterials from '@/components/Your-materials';
+import YourMaterials from '@/components/your-materials';
 import Title from '@/components/Title';
 import Footer from '@/components/Footer';
+import Result from '@/components/Result.vue'
 
 
 
@@ -26,6 +31,7 @@ export default {
     YourMaterials,
     Title,
     Footer,
+    Result,
   }
 }
 </script>
@@ -45,8 +51,8 @@ body,html,#app{
   font-family: 'GmarketSansTTFMedium';
   color: #0c0342;
   background-color: #e1e1e1;
-  padding: 0 0 80px;
   text-align: center;
+  margin: 0px;
 }
 
 
