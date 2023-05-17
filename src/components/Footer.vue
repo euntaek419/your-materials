@@ -23,7 +23,7 @@ export default {
 <style>
 
 .footer {
-  height: 300px;
+  height: 150px;
   font-size: 18px;
   text-align: center;
   color: #0c0342;

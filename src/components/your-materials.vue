@@ -3,11 +3,14 @@
 
     <div id="body" class="body">
         
+        <!--
         <img class="item" v-if="on_material0 == 0" @click="on_material0 = 1" src="../assets/images/material0_off.png">
         <img class="item" v-if="on_material0 == 1" @click="on_material0 = 0" src="../assets/images/material0.png">
 
         <img class="item" v-if="on_material1 == 0" @click="on_material1 = 1" src="../assets/images/material1_off.png">
         <img class="item" v-if="on_material1 == 1" @click="on_material1 = 0" src="../assets/images/material1.png">
+
+        -->
 
         <img class="item" v-if="on_material2 == 0" @click="on_material2 = 1" src="../assets/images/material2_off.png">
         <img class="item" v-if="on_material2 == 1" @click="on_material2 = 0" src="../assets/images/material2.png">
@@ -24,17 +27,22 @@
       
       <div class="input_box">
         <div>
-          <label for="input_ispins_material">보유한 재료 </label>
+          <div>
+          <label class="label_0" for="input_ispins_material">보유한 재료 </label>
           <input id="input_ispins_material" class="material_input" v-model="input_ispins_material" v-bind:keyup="NeedMaterialCalculation">
         </div>
 
         <div class="mini_box">
-          <label for="input_ispins_need_material">융합 부위 </label>
-          <input id="input_ispins_need_material" class="mini_input" v-model="input_ispins_need_material">
+          <label class="label_1" for="input_ispins_need_material">융합 부위 </label>
+          <input id="input_ispins_need_material" class="mini_input_1" v-model="input_ispins_need_material">
 
-          <label for="input_ispins_character">캐릭터 갯수 </label>
-          <input id="input_ispins_character" class="mini_input" v-model="input_ispins_character">
+          <label class="label_2" for="input_ispins_character">캐릭터 갯수 </label>
+          <input id="input_ispins_character" class="mini_input_2" v-model="input_ispins_character">
         </div>
+
+
+        </div>
+
       </div>
 
       <div class="down_box">
@@ -60,8 +68,8 @@ export default {
     return {
       on_material0 : 0,
       on_material1 : 0,
-      on_material2 : 0,
-      on_material3 : 0,
+      on_material2 : 3,
+      on_material3 : 3,
       need_material : [480, 360, 456], // 필요한 재료
       need_material_user : '', // 유저에게 필요한 재료
       date: 0, // 날짜
@@ -102,7 +110,7 @@ export default {
 }
 
 .add_box{
-  height: 200px;
+  height: 100px;
   padding: 20px;
 }
 
@@ -130,6 +138,9 @@ export default {
 
 .input_box{
   height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .material_input{
@@ -137,7 +148,6 @@ export default {
   color: #0c0342;
   background-color: #efefef;
   font-size: 15px;
-  margin-left: 30px;
 
   box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -150,10 +160,28 @@ export default {
 }
 
 .mini_box{
-  padding : 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 11px;
+  margin-left: 1px;
+  
 }
 
-.mini_input{
+.label_0 {
+  padding: 30px;
+}
+
+.label_1 {
+  padding: 40px;
+  margin-right: 15px;
+}
+
+.label_2 {
+  padding: 27px;
+}
+
+.mini_input_1{
   font-family: 'GmarketSansTTFMedium';
   color: #0c0342;
   background-color: #efefef;
@@ -162,14 +190,32 @@ export default {
   box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   object-fit: contain;
-  width: 135px;
+  width: 120px;
   height: 35px;
   outline:none;
   border:none;
   text-align: center;
   
-  margin-left: 15px;
-  margin-right: 15px;
+  /* margin-left: 30px; */
+  /* margin-right: 15px; */
+}
+
+.mini_input_2{
+  font-family: 'GmarketSansTTFMedium';
+  color: #0c0342;
+  background-color: #efefef;
+  font-size: 15px;
+
+  box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  object-fit: contain;
+  width: 120px;
+  height: 35px;
+  outline:none;
+  border:none;
+  text-align: center;
+  
+  
 }
 
 .down_box{

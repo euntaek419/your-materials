@@ -2,15 +2,15 @@
   <div class="result" id="result">
     <div class="result_box">
       
-      <div>
+      <div class="result_1">
         기계혁명:바칼레이드 / 융합 부위 5개의
       </div>
 
       <div>
-        필요한 재료는 0개 이며,
+        <spen class="result_2">필요한 재료는</spen> <spen class="result_3">0개</spen> <spen class="result_2">이며,</spen>
       </div>
 
-      <div>
+      <div class="result_3">
         N주뒤 가능합니다.
       </div>
 
@@ -42,21 +42,27 @@ export default {
 <style>
 
 .result{
-  background-image: linear-gradient(to top, #ccc7ee, #efefef);
+  background-image: linear-gradient(to right, #ccc7ee, #efefef);
   background-size: cover;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
 }
 
-.where{
+.result_1{
   font-size: 30px;
   font-weight: 500;
   color: #43397c;
 }
 
-.need_material, .when{
+.result_2{
+  font-size: 50px;
+  color: #43397c;
+}
+
+
+.result_3{
   font-family: 'GmarketSansTTFBold';
   font-size: 50px;
   color: #43397c;

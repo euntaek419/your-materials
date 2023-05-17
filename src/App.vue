@@ -45,7 +45,7 @@ export default {
     this.result = true;
 
     // 스크롤 위치를 1920px만큼 이동시킵니다.
-    const targetPosition = 1017;
+    const targetPosition = 930;
 
     // 애니메이션에 걸리는 시간을 설정합니다.
    const duration = 2000; // 2초에 걸쳐서 스크롤 애니메이션 진행
