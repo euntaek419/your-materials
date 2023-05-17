@@ -24,8 +24,17 @@
 
       
       <div class="add_box">
-        <button id="pc_room" class="add_btn">PC방</button>
-        <button id="arad_pass" class="add_btn">아라드PASS</button>
+        <button id="pc_room" class="add_btn" :style="{ backgroundColor : buttonColor_PC, color: textColor_PC }"
+        @click="addBtn_isClicked_PC">PC방</button>
+        
+        <button id="arad_pass" class="add_btn" :style="{ backgroundColor : buttonColor_PASS, color: textColor_PASS }"
+        @click="addBtn_isClicked_PASS">아라드PASS</button>
+
+        <!--
+        <button id="arad_pass" class="add_btn" :style="{ backgroundColor: buttonColor, color: textColor }"
+        @click="toggleButtonColor">아라드PASS</button>
+        -->
+
       </div>
       
       <div class="input_box">
@@ -87,6 +96,14 @@ export default {
       pcroom: [12,9,11,15], // 피시방 여부
       ischoice: false, // 가능한지 불가능한지
       cal: '',
+
+      buttonColor_PC: '',
+      textColor_PC: '',
+      isClicked_PC: true,
+
+      buttonColor_PASS: '',
+      textColor_PASS: '',
+      isClicked_PASS: true,
     };
   },
   methods: {
@@ -98,14 +115,36 @@ export default {
       this.on_material[0] = 1
       console.log(this.on_material[0]);
     },
+    addBtn_isClicked_PC() {
+      if (this.isClicked_PC) {
+        this.buttonColor_PC = '#0c0342';
+        this.textColor_PC = 'white';
+      } else {
+        this.buttonColor_PC = '';
+        this.textColor_PC = '';
+      }
+      this.isClicked_PC = !this.isClicked_PC;
+    },
+
+    addBtn_isClicked_PASS() {
+      if (this.isClicked_PASS) {
+        this.buttonColor_PASS = '#0c0342';
+        this.textColor_PASS = 'white';
+      } else {
+        this.buttonColor_PASS = '';
+        this.textColor_PASS = '';
+      }
+      this.isClicked_PASS = !this.isClicked_PASS;
+    },
   }
 }
+
 
 </script>
 
 <style scoped>
 .wrapper{
-  min-height: 80vh;
+  min-height: 72vh;
 }
 
 .body{
@@ -140,6 +179,7 @@ export default {
   color : white;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .input_box{
@@ -225,8 +265,8 @@ export default {
 }
 
 .down_box{
-  height: 100px;
-  padding: 100px;
+  height: 10px;
+  padding: 70px;
 }
 
 .down_btn{
