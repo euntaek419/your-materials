@@ -3,7 +3,7 @@
     <div class="result_box">
       
       <div class="result_1">
-        기계혁명:바칼레이드 / 융합 부위 5개의
+        기계혁명 : 바칼 레이드 / 융합 부위 5개의
       </div>
 
       <div>

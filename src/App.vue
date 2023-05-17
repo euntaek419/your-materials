@@ -16,7 +16,7 @@
       <Result></Result>
     </div>
 
-    <div>
+    <div v-if="result == true">
       <Footer></Footer>
     </div>
   </div>
@@ -50,11 +50,11 @@ export default {
     // 결과값을 true로 설정합니다.
     this.result = true;
 
-    // 스크롤 위치를 1920px만큼 이동시킵니다.
-    const targetPosition = 920;
+    // 스크롤 위치를 px만큼 이동시킵니다.
+    const targetPosition = 840;
 
     // 애니메이션에 걸리는 시간을 설정합니다.
-   const duration = 2000; // 2초에 걸쳐서 스크롤 애니메이션 진행
+   const duration = 1500; // N초에 걸쳐서 스크롤 애니메이션 진행
 
     // 애니메이션 시작 시의 스크롤 위치를 기록합니다.
     const startPosition = window.pageYOffset;
