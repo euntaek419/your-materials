@@ -12,12 +12,15 @@
 
         -->
 
+        <div class="item_box">
+
         <img class="item" v-if="on_material2 == 0" @click="on_material2 = 1" src="../assets/images/material2_off.png">
         <img class="item" v-if="on_material2 == 1" @click="on_material2 = 0" src="../assets/images/material2.png">
 
         <img class="item" v-if="on_material3 == 0" @click="on_material3 = 1" src="../assets/images/material3_off.png">
         <img class="item" v-if="on_material3 == 1" @click="on_material3 = 0" src="../assets/images/material3.png">
 
+        </div>
 
       
       <div class="add_box">
@@ -109,9 +112,12 @@ export default {
   font-size: 20px;
 }
 
+.item_box{
+  height: 100px;
+}
+
 .add_box{
   height: 100px;
-  padding: 20px;
 }
 
 .add_btn{
@@ -220,6 +226,7 @@ export default {
 
 .down_box{
   height: 100px;
+  padding: 100px;
 }
 
 .down_btn{

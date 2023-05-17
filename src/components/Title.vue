@@ -17,11 +17,6 @@ export default {
 
 <style scoped>
 .logo {
-  margin: 40px 0px 15px 0px;
-  object-fit: contain;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  margin: 40px 0px 0px 0px;
 }
 </style>

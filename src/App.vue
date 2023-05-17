@@ -8,6 +8,10 @@
       <your-materials @resulture="resultrue"></your-materials>
     </div>
 
+    <div>
+      <Floating></Floating>
+    </div>
+
     <div v-if="result == true">
       <Result></Result>
     </div>
@@ -23,6 +27,7 @@ import YourMaterials from '@/components/your-materials';
 import Title from '@/components/Title';
 import Footer from '@/components/Footer';
 import Result from '@/components/Result.vue';
+import Floating from '@/components/Floating.vue';
 // import {useScroll} from '@/vueuse/core';
 
 
@@ -38,6 +43,7 @@ export default {
     Title,
     Footer,
     Result,
+    Floating,
   },
   methods: {
     resultrue() {
@@ -45,7 +51,7 @@ export default {
     this.result = true;
 
     // 스크롤 위치를 1920px만큼 이동시킵니다.
-    const targetPosition = 930;
+    const targetPosition = 920;
 
     // 애니메이션에 걸리는 시간을 설정합니다.
    const duration = 2000; // 2초에 걸쳐서 스크롤 애니메이션 진행
