@@ -1,21 +1,22 @@
 <template>
   <div class="floating">
-    <button class="floating_btn" :style="{ backgroundColor : buttonColor_0, color: textColor_0 }"
-        @click="addBtn_isClicked_1">
+
+    <button class="floating_btn0" :style="{ color: textColor_0 }"
+        @click="addBtn_isClicked_0">
       이스핀즈
     </button> |
 
-    <button class="floating_btn" :style="{ backgroundColor : buttonColor_1, color: textColor_1 }"
+    <button class="floating_btn1" :style="{ color: textColor_1 }"
         @click="addBtn_isClicked_1">
       차원회랑
     </button> |
 
-    <button class="floating_btn" :style="{ backgroundColor : buttonColor_2, color: textColor_2 }"
+    <button class="floating_btn2" :style="{ color: textColor_2 }"
         @click="addBtn_isClicked_2">
       개전
     </button> |
     
-    <button class="floating_btn" :style="{ backgroundColor : buttonColor_3, color: textColor_3 }"
+    <button class="floating_btn3" :style="{ color: textColor_3 }"
         @click="addBtn_isClicked_3">
       바칼 레이드
     </button>
@@ -24,6 +25,57 @@
 
 <script>
 export default {
+  data: () => {
+    return {
+      //버튼 색상 변경 CSS
+      textColor_0: '',
+      textColor_1: '',
+      textColor_2: '',
+      textColor_3: '',
+      isClicked_0: true,
+      isClicked_1: true,
+      isClicked_2: true,
+      isClicked_3: true,
+    }
+  },
+  methods : {
+    addBtn_isClicked_0() {
+      if (this.isClicked_0) {
+        this.textColor_0 = '#387eff';
+      } else {
+        this.textColor_0 = 'white';
+      }
+      this.isClicked_0 = !this.isClicked_0;
+    },
+
+    addBtn_isClicked_1() {
+      if (this.isClicked_1) {
+        this.textColor_1 = '#387eff';
+      } else {
+        this.textColor_1 = 'white';
+      }
+      this.isClicked_1 = !this.isClicked_1;
+    },
+
+    addBtn_isClicked_2() {
+      if (this.isClicked_2) {
+        this.textColor_2 = '#387eff';
+      } else {
+        this.textColor_2 = 'white';
+      }
+      this.isClicked_2 = !this.isClicked_2;
+    },
+
+    addBtn_isClicked_3() {
+      if (this.isClicked_3) {
+        this.textColor_3 = '#387eff';
+      } else {
+        this.textColor_3 = 'white';
+      }
+      this.isClicked_3 = !this.isClicked_3;
+    },
+
+  },
 
 }
 </script>
@@ -49,7 +101,7 @@ export default {
   right: 0;
 }
 
-.floating_btn{
+.floating_btn0{
   font-size: 20px;
   font-weight: 500;
   text-align: center;
@@ -61,7 +113,55 @@ export default {
   cursor: pointer;
 }
 
-.floating_btn:hover{
+.floating_btn1{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background-color: #0c0342;
+  outline: none;
+  border: none;
+  font-family: GmarketSansTTFMedium;
+  cursor: pointer;
+}
+
+.floating_btn2{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background-color: #0c0342;
+  outline: none;
+  border: none;
+  font-family: GmarketSansTTFMedium;
+  cursor: pointer;
+}
+
+.floating_btn3{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background-color: #0c0342;
+  outline: none;
+  border: none;
+  font-family: GmarketSansTTFMedium;
+  cursor: pointer;
+}
+
+.floating_btn0:hover{
+  color: #387eff;
+}
+
+.floating_btn1:hover{
+  color: #387eff;
+}
+
+.floating_btn2:hover{
+  color: #387eff;
+}
+
+.floating_btn3:hover{
   color: #387eff;
 }
 
