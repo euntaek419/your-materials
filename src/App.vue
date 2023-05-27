@@ -5,11 +5,11 @@
     </div>
     
     <div>
-      <your-materials @resulture="resultrue"></your-materials>
+      <your-materials @resulture="resultrue" :ItemData="ItemData"></your-materials>
     </div>
 
     <div>
-      <Floating></Floating>
+      <Floating :ItemData="ItemData"></Floating>
     </div>
 
     <div v-if="result == true">
@@ -28,14 +28,14 @@ import Title from '@/components/Title';
 import Footer from '@/components/Footer';
 import Result from '@/components/Result.vue';
 import Floating from '@/components/Floating.vue';
-// import {useScroll} from '@/vueuse/core';
-
+import materialdata from './assets/materialdata'
 
 
 export default {
   data: () => {
     return {
       result : false,
+      ItemData : materialdata,
     }
   },
   components: {

@@ -3,22 +3,22 @@
 
     <button class="floating_btn0" :style="{ color: textColor_0 }"
         @click="addBtn_isClicked_0">
-      이스핀즈
+      {{ ItemData[0].name }}
     </button> |
 
     <button class="floating_btn1" :style="{ color: textColor_1 }"
         @click="addBtn_isClicked_1">
-      차원회랑
+      {{ ItemData[1].name }}
     </button> |
 
     <button class="floating_btn2" :style="{ color: textColor_2 }"
         @click="addBtn_isClicked_2">
-      개전
+      {{ ItemData[2].name }}
     </button> |
     
     <button class="floating_btn3" :style="{ color: textColor_3 }"
         @click="addBtn_isClicked_3">
-      바칼 레이드
+      {{ ItemData[3].name }}
     </button>
   </div>
 </template>
@@ -27,6 +27,7 @@
 export default {
   data: () => {
     return {
+
       //버튼 색상 변경 CSS
       textColor_0: '',
       textColor_1: '',
@@ -38,6 +39,9 @@ export default {
       isClicked_3: true,
     }
   },
+  props : {
+    ItemData : Array,
+  },
   methods : {
     addBtn_isClicked_0() {
       if (this.isClicked_0) {
@@ -46,6 +50,8 @@ export default {
         this.textColor_0 = 'white';
       }
       this.isClicked_0 = !this.isClicked_0;
+
+      console.log(this.ItemData[0])
     },
 
     addBtn_isClicked_1() {
