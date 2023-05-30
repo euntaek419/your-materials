@@ -1,4 +1,6 @@
 <template>
+  
+  
   <div class="result" id="result">
     <div class="result_box">
       
@@ -40,31 +42,4 @@ export default {
 </script>
 
 <style>
-
-.result{
-  background-image: linear-gradient(to right, #ccc7ee, #efefef);
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  min-height: 75vh;
-  display: flex;
-}
-
-.result_1{
-  font-size: 30px;
-  font-weight: 500;
-  color: #43397c;
-}
-
-.result_2{
-  font-size: 50px;
-  color: #43397c;
-}
-
-
-.result_3{
-  font-family: 'GmarketSansTTFBold';
-  font-size: 50px;
-  color: #43397c;
-}
 </style>

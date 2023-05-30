@@ -1,6 +1,6 @@
 <template>
 <div class="logo">
-  <img src="../assets/images/LOGO.gif">
+  <img src="../assets/images/LOGO_RE.gif">
 </div>
 </template>
 
@@ -15,8 +15,5 @@ export default {
 }
 </script>
 
-<style scoped>
-.logo {
-  margin: 40px 0px 0px 0px;
-}
+<style>
 </style>

@@ -19,6 +19,7 @@ export default [
     },
     {
         name : '기계 혁명 : 개전',
+        subname : '개전',
         buyneed : [456, 440], // 필요 재료 ( 인장, 겁화 )
         getitem : [91, 10], // 개전 클리어시 획득 재료 (폭룡왕의 인장, 용의 겁화 )
         shareitem : 23,
@@ -28,6 +29,7 @@ export default [
     {
         // buyneed2 : 440, // 용의 겁화 필요 재료 264 + 88 + 88
         name : '기계 혁명 : 바칼 레이드',
+        subname : '바칼 레이드',
         buyneed : [456, 440], // 폭룡왕의 인장 필요 재료
         getitem : [121,44], // 바칼 클리어시 획득 재료 (폭룡왕의 인장, 용의 겁화 )
         shareitem : 31,
