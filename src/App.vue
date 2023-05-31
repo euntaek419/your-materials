@@ -5,6 +5,10 @@
     </div>
     
     <div>
+      <Main></Main>
+    </div>
+
+    <div>
       <your-materials @resulture="resultrue" :ItemData="ItemData"></your-materials>
     </div>
 
@@ -25,6 +29,7 @@
 <script>
 // import YourMaterials from '@/components/your-materials';
 import Title from '@/components/Title';
+import Main from '@/components/Main'
 import Footer from '@/components/Footer';
 // import Result from '@/components/Result.vue';
 // import Floating from '@/components/Floating.vue';
@@ -40,6 +45,7 @@ export default {
   components: {
     // YourMaterials,
     Title,
+    Main,
     Footer,
     //Result,
     // Floating,

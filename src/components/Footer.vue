@@ -12,17 +12,24 @@
     </div>
     
     <div class="footer_box">
-      <button class="footer_btn2" style="color: #ff9c00; background-color: #ffe6bd; width: 80px;">{{ ItemData[2].subname }}</button>   
-      <button class="footer_btn">폭룡왕의 인장</button>
-      <button class="footer_btn">용의 겁화</button>
+      <button class="footer_btn2">{{ ItemData[2].subname }}</button>
+
+      <div>
+        <button class="footer_sub_btn1">폭룡왕의 인장</button>
+        <button class="footer_sub_btn1">용의 겁화</button>
+      </div>
     </div>
 
     <div class="footer_box">
-      <button class="footer_btn3" style="color: #ff3535; background-color: #ffdfdf; width: 150px;">
-        {{ ItemData[3].subname }}
-      </button>
-      <button class="footer_btn">폭룡왕의 인장</button><p></p>
-      <button class="footer_btn">용의 겁화</button>
+      <div>
+          <button class="footer_btn3">
+            {{ ItemData[3].subname }}
+          </button>
+      </div>
+      <div>
+          <button class="footer_sub_btn2">폭룡왕의 인장</button>
+          <button class="footer_sub_btn2">용의 겁화</button>
+      </div>
 
     </div>
 
@@ -45,6 +52,7 @@ export default {
 
 .footer_box{
   width: 400px;
+  display: flex;
 }
 
 .footer_btn{
@@ -55,19 +63,38 @@ export default {
   border: none;
   outline: none;
   text-align: center;
+  font-family: 'GmarketSansTTFMedium';
 }
 
 .footer_btn2{
   height: 35px;
   border-radius: 10px;
-  cursor: pointer;
   font-size: 20px;
   border: none;
   outline: none;
   text-align: center;
+  font-family: 'GmarketSansTTFMedium';
+
+  color: #ff9c00;
+  background-color: #ffe6bd;
+  width: 80px;
 }
 
 .footer_btn3{
+  height: 35px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: 'GmarketSansTTFMedium';
+
+  color: #ff3535;
+  background-color: #ffdfdf;
+  width: 150px;
+}
+
+.footer_sub_btn1{
   height: 35px;
   border-radius: 10px;
   cursor: pointer;
@@ -75,5 +102,35 @@ export default {
   border: none;
   outline: none;
   text-align: center;
+  background-color: transparent;
+  font-family: 'GmarketSansTTFMedium';
+  color: #8a8a8a;
+
+  display: block;
+  margin-left: 40px;
+}
+
+.footer_sub_btn1:hover{
+  color : #ff9c00;
+}
+
+.footer_sub_btn2{
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  text-align: center;
+  background-color: transparent;
+  font-family: 'GmarketSansTTFMedium';
+  color: #8a8a8a;
+
+  display: block;
+  margin-left: 40px;
+}
+
+.footer_sub_btn2:hover{
+  color : #ff3535;
 }
 </style>
