@@ -27,6 +27,7 @@ export default {
   text-align: center;
   color: #616161;
   height: 620px;
+  padding-right: 30px;
 }
 
 .Main_img{

@@ -3,6 +3,7 @@ export default [
     //seb_reward_material: [48, 48, 23, 31], // 계귀 재료 개수 [이스핀즈,차원회랑,개전,바칼] //2단 6개, 3단 12개, 초월 12개
     {
         name : '이스핀즈',
+        itemname : '사방의 분열된 기운',
         buyneed : 480, //이스핀즈 필요 재료
         getitem : 96, // 3단 클리어시 획득 재료
         shareitem : 24, //계정 귀속 재료

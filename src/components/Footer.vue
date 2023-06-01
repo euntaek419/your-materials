@@ -2,17 +2,22 @@
   <div class="footer">
 
     <div class="footer_box">
-      <button class="footer_btn" style="color: #b73aff; background-color: #f4dfff; width: 120px;">
+      <button class="footer_btn" style="color: #b73aff; background-color: #f4dfff; width: 120px;"
+      @click="$emit('Open0')">
         {{ ItemData[0].name }}
       </button>
     </div>
 
     <div class="footer_box">
-      <button class="footer_btn" style="color: #3680ff; background-color: #e1ecff; width: 120px;">{{ ItemData[1].name }}</button>
+      <button class="footer_btn" style="color: #3680ff; background-color: #e1ecff; width: 120px;">
+        {{ ItemData[1].name }}
+      </button>
     </div>
     
     <div class="footer_box">
-      <button class="footer_btn2">{{ ItemData[2].subname }}</button>
+      <button class="footer_btn2">
+        {{ ItemData[2].subname }}
+      </button>
 
       <div>
         <button class="footer_sub_btn1">폭룡왕의 인장</button>
@@ -57,7 +62,7 @@ export default {
 
 .footer_btn{
   height: 35px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 20px;
   border: none;
@@ -68,7 +73,7 @@ export default {
 
 .footer_btn2{
   height: 35px;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 20px;
   border: none;
   outline: none;
@@ -82,7 +87,7 @@ export default {
 
 .footer_btn3{
   height: 35px;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 20px;
   border: none;
   outline: none;
@@ -96,7 +101,7 @@ export default {
 
 .footer_sub_btn1{
   height: 35px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 20px;
   border: none;
@@ -116,7 +121,7 @@ export default {
 
 .footer_sub_btn2{
   height: 35px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 20px;
   border: none;
