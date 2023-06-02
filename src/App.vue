@@ -12,6 +12,10 @@
       <Materials0 :ItemData="ItemData" @Open0="Open0()"></Materials0>
     </div>
 
+    <div v-if="Materials1 == true">
+      <Materials1 :ItemData="ItemData" @Open0="Open1()"></Materials1>
+    </div>
+
     <div>
       <!-- <your-materials :ItemData="ItemData" @resulture="resultrue"></your-materials> -->
     </div>
@@ -21,7 +25,7 @@
     </div>
 
     <div>
-      <Footer :ItemData="ItemData" @Open0="Open0()"></Footer>
+      <Footer :ItemData="ItemData" @Open0="Open0()" @Open1="Open1"></Footer>
     </div>
   </div>
 </template>
@@ -30,6 +34,7 @@
 import Title from '@/components/Title';
 import Main from '@/components/Main'
 import Materials0 from './components/Materials0.vue';
+import Materials1 from './components/Materials1.vue';
 import Footer from '@/components/Footer';
 import materialdata from './assets/materialdata'
 
@@ -48,6 +53,7 @@ export default {
     Title,
     Main,
     Materials0,
+    Materials1,
     Footer,
   
     },
@@ -58,6 +64,15 @@ export default {
       }
       else if(this.Materials0 == true) {
         this.Materials0 = false
+      }
+    },
+
+    Open1() {
+      if(this.Materials1 == false) {
+        this.Materials1 = true
+      }
+      else if(this.Materials1 == true) {
+        this.Materials1 = false
       }
     }
   }

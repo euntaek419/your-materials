@@ -9,7 +9,8 @@
     </div>
 
     <div class="footer_box">
-      <button class="footer_btn" style="color: #3680ff; background-color: #e1ecff; width: 120px;">
+      <button class="footer_btn" style="color: #3680ff; background-color: #e1ecff; width: 120px;"
+      @click="$emit('Open1')">
         {{ ItemData[1].name }}
       </button>
     </div>
