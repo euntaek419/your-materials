@@ -8,12 +8,14 @@
       <Main></Main>
     </div>
 
-    <div v-if="Materials0 == true">
-      <Materials0 :ItemData="ItemData" @Open0="Open0()"></Materials0>
-    </div>
+    <div class="main_box">
+      <div v-if="Materials0 == true" class="main">
+        <Materials0 :ItemData="ItemData" @Open0="Open0()" ></Materials0>
+      </div>
 
-    <div v-if="Materials1 == true">
-      <Materials1 :ItemData="ItemData" @Open0="Open1()"></Materials1>
+      <div v-if="Materials1 == true" class="main">
+        <Materials1 :ItemData="ItemData" @Open0="Open1()"></Materials1>
+      </div>
     </div>
 
     <div>
@@ -97,6 +99,14 @@ export default {
   background-color: white;
   padding-left: 100px;
   padding-top: 50px;
+}
+
+.main_box{
+  display: flex;
+}
+
+.main{
+  width: 700px;
 }
 
 
