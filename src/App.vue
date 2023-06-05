@@ -14,7 +14,7 @@
       </div>
 
       <div v-if="Materials1 == true" class="main">
-        <Materials1 :ItemData="ItemData" @Open0="Open1()"></Materials1>
+        <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
       </div>
     </div>
 

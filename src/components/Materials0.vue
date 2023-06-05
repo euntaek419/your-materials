@@ -18,27 +18,36 @@
 
     <div class="Material0_mainbox">
         <div class="Material0_padding">
-          <div>필요 재료</div>
-          <div>N 개</div>
+            <div class="Material0_padding_box">
+              <div class="Material0_padding_box1">
+                <div class="gray">필요 재료</div>
+                <div class="big">10000 개</div>
+              </div>
 
-          <div>소요 기간</div>
-          <div>N 주</div>
+              <div class="Material0_padding_box2">
+                <div class="gray">소요 기간</div>
+                <div class="big">99 주</div>
+              </div>
+            </div>
 
-          <hr style="width:500px;">
+          <hr style="width:500px; margin-left:3px;">
 
-          <div>
-            <label class="Material0_have"> 보유 재료 </label>
-            <input class="Material0_have">
+          <div class="Materials0_input_box">
+            <label class="gray"> 보유 재료
+              <input class="Materials0_have">
+            </label>
           </div>
 
-          <div>
-            <label class="Material0_need"> 융합 개수 </label>
-            <input class="Material0_need">
+          <div class="Materials0_input_box">
+            <label class="gray"> 융합 개수
+              <input class="Materials0_need">
+            </label>
           </div>
 
-          <div>
-            <label class="Material0_character"> 캐릭터 수 </label>
-            <input class="Material0_character">
+          <div class="Materials0_input_box">
+            <label class="gray"> 캐릭터 수   
+              <input class="Materials0_character">
+            </label>
           </div>
 
           <div>
@@ -126,6 +135,41 @@ export default {
 
 .Material0_padding{
     padding : 70px;
+}
+
+.Material0_padding_box{
+    display: flex;
+    padding-bottom : 20px;
+}
+
+.Material0_padding_box1{
+    width: 250px;
+}
+.Material0_padding_box2{
+    width: 250px;
+}
+
+.gray{
+    color:#616161;
+    padding:3px;
+}
+
+.big{
+    font-size: 50px;
+}
+
+.Materials0_input_box{
+    padding-top:40px;
+}
+
+.Materials0_have{
+    border-radius: 20px;
+    border: solid 1px #efefef;
+    background-color: #fff;
+    outline: none;
+    text-align: center;
+    width: 300px;
+    height: 40px;
 }
 
 .bonus_btn{

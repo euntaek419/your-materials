@@ -3,22 +3,22 @@
     
 
     <div class="Materials1_topbox">
-        <button class="title01" disabled>
+        <button class="Materials1_title01" disabled>
             {{ ItemData[1].name }}
         </button>
 
-        <button class="title02" disabled>
+        <button class="Materials1_title02" disabled>
             {{ ItemData[1].itemname }}
         </button>
 
-        <button class="title03" @click="$emit('Open1')">
+        <button class="Materials1_title03" @click="$emit('Open1')">
             -
         </button>
     </div>
 
     <div class="Materials1_mainbox">
         <div class="Materials1_padding">
-          <div>필요 재료</div>
+          <div class="gray">필요 재료</div>
           <div>N 개</div>
 
           <div>소요 기간</div>
@@ -78,12 +78,12 @@ export default {
     display: flex;
 }
 
-.title01 {
+.Materials1_title01 {
     width: 120px;
     height: 35px;
-    background-color: #f4dfff;
+    background-color: #e1ecff;
     font-size: 20px;
-    color : #b73aff;
+    color: #3680ff;
     border: none;
     outline: none;
     border-radius: 20px;
@@ -91,26 +91,26 @@ export default {
     margin-right: 10px;
 }
 
-.title02 {
+.Materials1_title02 {
     height: 35px;
     font-size: 20px;
     border: none;
     outline: none;
     background-color: transparent;
-    color: #b73aff;
+    color: #3680ff;
     font-family: 'GmarketSansTTFMedium';
 }
 
-.title03 {
+.Materials1_title03 {
     height: 35px;
     width: 35px;
     font-size: 20px;
     border: none;
     outline: none;
-    color: #b73aff;
+    color: #3680ff;
     font-family: 'GmarketSansTTFMedium';
     border-radius: 16.5px;
-    background-color: #f4dfff;
+    background-color: #e1ecff;
     margin-left: auto;
     cursor: pointer;
 }
