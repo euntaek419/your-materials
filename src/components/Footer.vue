@@ -22,7 +22,7 @@
 
       <div>
         <button class="footer_sub_btn1">폭룡왕의 인장</button>
-        <button class="footer_sub_btn1">용의 겁화</button>
+        <!-- <button class="footer_sub_btn1">용의 겁화</button> -->
       </div>
     </div>
 
@@ -34,7 +34,7 @@
       </div>
       <div>
           <button class="footer_sub_btn2">폭룡왕의 인장</button>
-          <button class="footer_sub_btn2">용의 겁화</button>
+          <!-- <button class="footer_sub_btn2">용의 겁화</button> -->
       </div>
 
     </div>
@@ -57,7 +57,7 @@ export default {
 }
 
 .footer_box{
-  width: 400px;
+  width: 460px;
   display: flex;
 }
 

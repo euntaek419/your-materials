@@ -26,7 +26,7 @@ export default {
 .Main{
   text-align: center;
   color: #616161;
-  height: 620px;
+  height: 700px;
   padding-right: 30px;
 }
 
