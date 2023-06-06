@@ -1,49 +1,58 @@
 <template>
-  <div class="Materials1">
+  <div class="Materials0">
     
 
-    <div class="Materials1_topbox">
-        <button class="Materials1_title01" disabled>
-            {{ ItemData[1].name }}
+    <div class="Materials0_topbox">
+        <button class="name_btn Materials0_topbox_btn" disabled>
+            {{ ItemData[0].name }}
         </button>
 
-        <button class="Materials1_title02" disabled>
-            {{ ItemData[1].itemname }}
+        <button class="itemname_btn Materials0_topbox_btn" disabled>
+            {{ ItemData[0].itemname }}
         </button>
 
-        <button class="Materials1_title03" @click="$emit('Open1')">
+        <button class="minus_btn Materials0_topbox_btn" @click="$emit('Open1')">
             -
         </button>
     </div>
 
-    <div class="Materials1_mainbox">
-        <div class="Materials1_padding">
-          <div class="gray">필요 재료</div>
-          <div>N 개</div>
+    <div class="Material0_mainbox">
+        <div class="Box_padding">
+            <div class="Material0_padding_box">
+              <div class="Material0_padding_box1">
+                <div class="gray">필요 재료</div>
+                <div class="big">9999 개</div>
+              </div>
 
-          <div>소요 기간</div>
-          <div>N 주</div>
+              <div class="Material0_padding_box2">
+                <div class="gray">소요 기간</div>
+                <div class="big">N 주</div>
+              </div>
+            </div>
 
-          <hr style="width:500px;">
+          <hr style="width:425px; margin-left:3px;">
 
-          <div>
-            <label class="Materials1_have"> 보유 재료 </label>
-            <input class="Materials1_have">
+          <div class="Materials0_input_box">
+            <label class="gray"> 보유 재료
+              <input class="Materials0_have">
+            </label>
           </div>
 
-          <div>
-            <label class="Materials1_need"> 융합 개수 </label>
-            <input class="Materials1_need">
+          <div class="Materials0_input_box">
+            <label class="gray"> 융합 개수
+              <input class="Materials0_need">
+            </label>
           </div>
 
-          <div>
-            <label class="Materials1_character"> 캐릭터 수 </label>
-            <input class="Materials1_character">
+          <div class="Materials0_input_box">
+            <label class="gray"> 캐릭터 수   
+              <input class="Materials0_character">
+            </label>
           </div>
 
           <div>
             <button class="bonus_btn">PC방</button>
-            <button class="bonus_btn">PASS</button>
+            <button class="bonus_btn bonus_btn_margin">PASS</button>
           </div>
         </div>
     </div>
@@ -60,63 +69,50 @@ export default {
 }
 </script>
 
-<style>
-.Materials1 {
-    width: 400px;
+<style scoped>
+.Materials0 {
     height: 620px;
+    padding-right: 30px; /* 각 페이지 간격 */
+    /* 필수 */
 }
 
-.Materials1_top {
-    
-    width: 400px;
-    height: 60px;
-}
-
-.Materials1_topbox{
-    width: 640px;
-    height: 60px;
+.Materials0_topbox{
+    width: 520px; 
+    height: 60px; 
     display: flex;
+    /* 필수 */
 }
 
-.Materials1_title01 {
-    width: 120px;
+.Materials0_topbox_btn{
     height: 35px;
-    background-color: #e1ecff;
     font-size: 20px;
-    color: #3680ff;
+    color : #b73aff;
+    font-family: 'GmarketSansTTFMedium';
     border: none;
     outline: none;
-    border-radius: 20px;
-    font-family: 'GmarketSansTTFMedium';
+    /* 필수 */
+}
+.name_btn {
+    width: 120px;
+    background-color: #f4dfff;
+    border-radius: 20px;    
     margin-right: 10px;
 }
 
-.Materials1_title02 {
-    height: 35px;
-    font-size: 20px;
-    border: none;
-    outline: none;
+.itemname_btn {
     background-color: transparent;
-    color: #3680ff;
-    font-family: 'GmarketSansTTFMedium';
 }
 
-.Materials1_title03 {
-    height: 35px;
+.minus_btn {
     width: 35px;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    color: #3680ff;
-    font-family: 'GmarketSansTTFMedium';
     border-radius: 16.5px;
-    background-color: #e1ecff;
+    background-color: #f4dfff;
     margin-left: auto;
     cursor: pointer;
 }
 
-.Materials1_mainbox{
-    width: 640px;
+.Material0_mainbox{
+    width: 520px;
     height: 500px;
     border-radius: 40px;
     box-shadow: 10px 10px 40px 0 rgba(220, 220, 220, 0.3);
@@ -124,8 +120,43 @@ export default {
     background-color: #fff;
 }
 
-.Materials1_padding{
-    padding : 70px;
+.Box_padding{
+    padding : 40px;
+}
+
+.Material0_padding_box{
+    display: flex;
+    padding-bottom : 20px;
+}
+
+.Material0_padding_box1{
+    width: 250px;
+}
+
+.gray{
+    color:#616161;
+    padding:3px;
+}
+
+.big{
+    font-size: 50px;
+}
+
+.Materials0_input_box{
+    padding-top:40px;
+}
+
+.Materials0_have, .Materials0_need, .Materials0_character{
+    border-radius: 20px;
+    border: solid 1px #efefef;
+    background-color: #fff;
+    outline: none;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    margin-left : 50px;
+    color : #000;
+    font-family: 'GmarketSansTTFMedium';
 }
 
 .bonus_btn{
@@ -135,9 +166,16 @@ export default {
     border: solid 1px #efefef;
     background-color: #f1f1f1;
     color : #bbbaba;
+    margin-top: 20px;
+    font-family: 'GmarketSansTTFMedium';
+    margin-top:20px;
 }
 
-.Materials1_character{
+.bonus_btn_margin{
+    margin-left: 30px;
+}
+
+.Material0_character{
     border-radius: 20px;
     border: solid 1px #efefef;
     background-color: #fff;
@@ -145,6 +183,6 @@ export default {
 
 .bonus_btn:hover{
     color: #000;
-    background: #fff;
+    background-color: #fff;
 }
 </style>

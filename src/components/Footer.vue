@@ -52,7 +52,7 @@ export default {
 
 <style>
 .footer {
-  height: 150px;
+  height: 40px;
   display: flex;
 }
 

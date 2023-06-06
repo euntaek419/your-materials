@@ -3,25 +3,25 @@
     
 
     <div class="Materials0_topbox">
-        <button class="title01" disabled>
+        <button class="name_btn Materials0_topbox_btn" disabled>
             {{ ItemData[0].name }}
         </button>
 
-        <button class="title02" disabled>
+        <button class="itemname_btn Materials0_topbox_btn" disabled>
             {{ ItemData[0].itemname }}
         </button>
 
-        <button class="title03" @click="$emit('Open0')">
+        <button class="minus_btn Materials0_topbox_btn" @click="$emit('Open0')">
             -
         </button>
     </div>
 
     <div class="Material0_mainbox">
-        <div class="Material0_padding">
+        <div class="Box_padding">
             <div class="Material0_padding_box">
               <div class="Material0_padding_box1">
                 <div class="gray">필요 재료</div>
-                <div class="big">10000 개</div>
+                <div class="big">9999 개</div>
               </div>
 
               <div class="Material0_padding_box2">
@@ -30,7 +30,7 @@
               </div>
             </div>
 
-          <hr style="width:500px; margin-left:3px;">
+          <hr style="width:425px; margin-left:3px;">
 
           <div class="Materials0_input_box">
             <label class="gray"> 보유 재료
@@ -52,7 +52,7 @@
 
           <div>
             <button class="bonus_btn">PC방</button>
-            <button class="bonus_btn">PASS</button>
+            <button class="bonus_btn bonus_btn_margin">PASS</button>
           </div>
         </div>
     </div>
@@ -69,55 +69,42 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .Materials0 {
-    width: 400px;
     height: 620px;
-}
-
-.Materials0_top {
-    
-    width: 400px;
-    height: 60px;
+    padding-right: 30px; /* 각 페이지 간격 */
+    /* 필수 */
 }
 
 .Materials0_topbox{
-    width: 640px;
-    height: 60px;
+    width: 520px; 
+    height: 60px; 
     display: flex;
+    /* 필수 */
 }
 
-.title01 {
-    width: 120px;
+.Materials0_topbox_btn{
     height: 35px;
-    background-color: #f4dfff;
     font-size: 20px;
     color : #b73aff;
+    font-family: 'GmarketSansTTFMedium';
     border: none;
     outline: none;
-    border-radius: 20px;
-    font-family: 'GmarketSansTTFMedium';
+    /* 필수 */
+}
+.name_btn {
+    width: 120px;
+    background-color: #f4dfff;
+    border-radius: 20px;    
     margin-right: 10px;
 }
 
-.title02 {
-    height: 35px;
-    font-size: 20px;
-    border: none;
-    outline: none;
+.itemname_btn {
     background-color: transparent;
-    color: #b73aff;
-    font-family: 'GmarketSansTTFMedium';
 }
 
-.title03 {
-    height: 35px;
+.minus_btn {
     width: 35px;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    color: #b73aff;
-    font-family: 'GmarketSansTTFMedium';
     border-radius: 16.5px;
     background-color: #f4dfff;
     margin-left: auto;
@@ -125,7 +112,7 @@ export default {
 }
 
 .Material0_mainbox{
-    width: 640px;
+    width: 520px;
     height: 500px;
     border-radius: 40px;
     box-shadow: 10px 10px 40px 0 rgba(220, 220, 220, 0.3);
@@ -133,8 +120,8 @@ export default {
     background-color: #fff;
 }
 
-.Material0_padding{
-    padding : 70px;
+.Box_padding{
+    padding : 40px;
 }
 
 .Material0_padding_box{
@@ -143,10 +130,7 @@ export default {
 }
 
 .Material0_padding_box1{
-    width: 250px;
-}
-.Material0_padding_box2{
-    width: 250px;
+    width: 230px;
 }
 
 .gray{
@@ -162,7 +146,7 @@ export default {
     padding-top:40px;
 }
 
-.Materials0_have{
+.Materials0_have, .Materials0_need, .Materials0_character{
     border-radius: 20px;
     border: solid 1px #efefef;
     background-color: #fff;
@@ -170,6 +154,9 @@ export default {
     text-align: center;
     width: 300px;
     height: 40px;
+    margin-left : 50px;
+    color : #000;
+    font-family: 'GmarketSansTTFMedium';
 }
 
 .bonus_btn{
@@ -179,6 +166,13 @@ export default {
     border: solid 1px #efefef;
     background-color: #f1f1f1;
     color : #bbbaba;
+    margin-top: 20px;
+    font-family: 'GmarketSansTTFMedium';
+    margin-top:20px;
+}
+
+.bonus_btn_margin{
+    margin-left: 30px;
 }
 
 .Material0_character{
@@ -189,6 +183,6 @@ export default {
 
 .bonus_btn:hover{
     color: #000;
-    background: #fff;
+    background-color: #fff;
 }
 </style>

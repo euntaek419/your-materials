@@ -97,17 +97,17 @@ export default {
   font-family: 'GmarketSansTTFMedium';
   color: black;
   background-color: white;
-  padding-left: 100px;
-  padding-top: 50px;
+  padding-left: 70px;
+  padding-top: 30px;
 }
 
 .main_box{
   display: flex;
 }
 
-.main{
+/* .main{
   width: 700px;
-}
+} */
 
 
 </style>
