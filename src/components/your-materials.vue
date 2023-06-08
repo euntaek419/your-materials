@@ -24,17 +24,17 @@
         <div>
           <div>
             <label class="label_have_0" for="have_0">보유한 재료 </label>
-            <input id="have_0" class="have_0" v-model="have_0">
+            <input id="have_0" class="have_0" v-model="have_00">
             <!-- <input id="have_0" class="have_0" v-model="input_ispins_material" v-bind:keyup="NeedMaterialCalculation"> -->
           </div>
 
           <div class="mini_box">
             <label class="label_need_0" for="need_0">융합 부위 </label>
-            <input id="need_0" class="mini_input_1" v-model="need_0">
+            <input id="need_0" class="mini_input_1" v-model="need_00">
             <!-- <input id="need_0" class="mini_input_1" v-model="input_ispins_need_material"> -->
 
             <label class="label_character_0" for="character_0">캐릭터 갯수 </label>
-            <input id="character_0" class="mini_input_2" v-model="character_0">
+            <input id="character_0" class="mini_input_2" v-model="character_00">
             <!-- <input id="character_0" class="mini_input_2" v-model="input_ispins_character"> -->
           </div>
         </div>
@@ -56,9 +56,9 @@ export default {
     return {
       on_material_2 : 3,
       on_material_3 : 3,
-      have_0 : '',
-      need_0 : '',
-      character_0 : '',
+      have_00 : '',
+      need_00 : '',
+      character_00 : '',
 
       //버튼 색상 변경 CSS
       buttonColor_PC: '',

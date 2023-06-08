@@ -16,6 +16,14 @@
       <div v-if="Materials1 == true" class="main">
         <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
       </div>
+
+      <div v-if="Materials1 == true" class="main">
+        <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
+      </div>
+
+      <div v-if="Materials1 == true" class="main">
+        <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
+      </div>
     </div>
 
     <div>
