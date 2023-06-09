@@ -17,12 +17,12 @@
         <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
       </div>
 
-      <div v-if="Materials1 == true" class="main">
-        <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
+      <div v-if="Materials2 == true" class="main">
+        <Materials2 :ItemData="ItemData" @Open2="Open2()"></Materials2>
       </div>
 
-      <div v-if="Materials1 == true" class="main">
-        <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
+      <div v-if="Materials3 == true" class="main">
+        <Materials3 :ItemData="ItemData" @Open3="Open3()"></Materials3>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
     </div>
 
     <div>
-      <Footer :ItemData="ItemData" @Open0="Open0()" @Open1="Open1"></Footer>
+      <Footer :ItemData="ItemData" @Open0="Open0()" @Open1="Open1()" @Open2="Open2()" @Open3="Open3()"></Footer>
     </div>
   </div>
 </template>
@@ -45,6 +45,8 @@ import Title from '@/components/Title';
 import Main from '@/components/Main'
 import Materials0 from './components/Materials0.vue';
 import Materials1 from './components/Materials1.vue';
+import Materials2 from './components/Materials2.vue';
+import Materials3 from './components/Materials3.vue';
 import Footer from '@/components/Footer';
 import materialdata from './assets/materialdata'
 
@@ -64,6 +66,8 @@ export default {
     Main,
     Materials0,
     Materials1,
+    Materials2,
+    Materials3,
     Footer,
   
     },
@@ -84,7 +88,25 @@ export default {
       else if(this.Materials1 == true) {
         this.Materials1 = false
       }
-    }
+    },
+
+    Open2() {
+      if(this.Materials2 == false) {
+        this.Materials2 = true
+      }
+      else if(this.Materials2 == true) {
+        this.Materials2 = false
+      }
+    },
+
+    Open3() {
+      if(this.Materials3 == false) {
+        this.Materials3 = true
+      }
+      else if(this.Materials3 == true) {
+        this.Materials3 = false
+      }
+    },
   }
 }
 
@@ -112,10 +134,6 @@ export default {
 .main_box{
   display: flex;
 }
-
-/* .main{
-  width: 700px;
-} */
 
 
 </style>

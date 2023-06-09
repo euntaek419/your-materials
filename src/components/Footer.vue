@@ -21,20 +21,21 @@
       </button>
 
       <div>
-        <button class="footer_sub_btn1">폭룡왕의 인장</button>
-        <!-- <button class="footer_sub_btn1">용의 겁화</button> -->
+        <button class="footer_sub_btn1"
+        @click="$emit('Open2')">폭룡왕의 인장</button>
+        <button class="footer_sub_btn1">용의 겁화 ( 미개발 ) </button>
       </div>
     </div>
 
     <div class="footer_box">
+      <button class="footer_btn3">
+        {{ ItemData[3].subname }}
+      </button> 
+
       <div>
-          <button class="footer_btn3">
-            {{ ItemData[3].subname }}
-          </button>
-      </div>
-      <div>
-          <button class="footer_sub_btn2">폭룡왕의 인장</button>
-          <!-- <button class="footer_sub_btn2">용의 겁화</button> -->
+        <button class="footer_sub_btn2"
+        @click="$emit('Open3')">폭룡왕의 인장</button>
+        <button class="footer_sub_btn2">용의 겁화 ( 미개발 )</button>
       </div>
 
     </div>

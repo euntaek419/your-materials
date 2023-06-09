@@ -1,7 +1,7 @@
 <template>
-<div class="logo">
-  <img src="../assets/images/LOGO_RE.gif">
-</div>
+  <div class="logo">
+    <img src="../assets/images/LOGO_RE.gif">
+  </div>
 </template>
 
 <script>

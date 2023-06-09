@@ -50,8 +50,6 @@ export default {
         this.textColor_0 = 'white';
       }
       this.isClicked_0 = !this.isClicked_0;
-
-      console.log(this.ItemData[0])
     },
 
     addBtn_isClicked_1() {

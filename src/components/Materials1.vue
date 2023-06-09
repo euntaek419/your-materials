@@ -1,64 +1,56 @@
 <template>
-  <div class="Materials0">
-
-    <div class="Materials0_topbox">
-        <button class="name_btn Materials0_topbox_btn" disabled>
-            {{ ItemData[0].name }}
+  <div class="Materials">
+    <div class="Topbox">
+        <button class="Topbox_btn Name_btn" disabled>
+            {{ ItemData[1].name }}
         </button>
 
-        <button class="itemname_btn Materials0_topbox_btn" disabled>
-            {{ ItemData[0].itemname }}
+        <button class="Topbox_btn Itemname_btn" disabled>
+            {{ ItemData[1].itemname }}
         </button>
 
-        <button class="minus_btn Materials0_topbox_btn" @click="$emit('Open1')">
+        <button class="Topbox_btn Minus_btn" @click="$emit('Open1')">
             -
         </button>
     </div>
 
-    <div class="Material0_mainbox">
+    <div class="Mainbox">
         <div class="Box_padding">
-            <div class="Material0_padding_box">
-              <div class="Material0_padding_box1">
-                <div v-if="resulton_0 == false ">
-                  <div class="gray">필요 재료</div>
-                  <div class="big" >{{ Materials0_result0() }} </div>
-                </div>
-
-                <div v-if="resulton_0 == true ">
-                  <div class="gray">남는 재료</div>
-                  <div class="big" >{{ Materials0_result0() }} </div>
-                </div>
+            <div class="Padding_box">
+              <div class="Padding_box1">
+                  <div class="Gray">{{ resultmax_1 }}</div>
+                  <div class="Big" >{{ Materials1_result0() }} </div>
               </div>
 
-              <div class="Material0_padding_box2">
-                <div class="gray">소요 기간</div>
-                <div class="big">{{ Materials0_result1() }}</div>
+              <div class="Padding_box2">
+                <div class="Gray">소요 기간</div>
+                <div class="Big">{{ Materials1_result1() }}</div>
               </div>
             </div>
 
           <hr style="width:355px; float:left;">
 
-          <div class="Materials0_input_box">
-            <label class="gray"> 보유 재료
-              <input class="Materials0_have" maxlength='5' v-model="have_0">
+          <div class="Input_box">
+            <label class="Gray"> 보유 재료
+              <input class="Have" maxlength='4' v-model="have_1">
             </label>
           </div>
 
-          <div class="Materials0_input_box">
-            <label class="gray"> 융합 개수
-              <input class="Materials0_need" maxlength='2' v-model="need_0">
+          <div class="Input_box">
+            <label class="Gray"> 융합 개수
+              <input class="Need" maxlength='2' v-model="need_1">
             </label>
           </div>
 
-          <div class="Materials0_input_box">
-            <label class="gray"> 캐릭터 수   
-              <input class="Materials0_account" maxlength='2' v-model="account_0">
+          <div class="Input_box">
+            <label class="Gray"> 캐릭터 수   
+              <input class="Account" maxlength='2' v-model="account_1" placeholder="0" >
             </label>
           </div>
 
           <div>
-            <button class="bonus_btn">PC방</button>
-            <button class="bonus_btn bonus_btn_margin">PASS</button>
+            <button class="Bonus_btn" @click="Pc_1" :style="{ backgroundColor : PcStyleBack_1, color: PcStyleColor_1 }">PC방</button>
+            <button class="Bonus_btn Bonus_btn_margin" @click="Pass_1" :style="{ backgroundColor : PassStyleBack_1, color:PassStyleColor_1 }">PASS</button>
           </div>
         </div>
     </div>
@@ -70,101 +62,151 @@
 export default {
     data:() => {
         return {
-            have_0 : '',
-            need_0 : '',
-            account_0 : '',
-            result_0 : '',
-            resulton_0 : false,
-            when_0 : '',
+            have_1 : '',
+            need_1 : '',
+            account_1 : '',
+            result_1 : '',
+            resultmax_1 : '필요 재료',
+            when_1 : '',
+            isPcPassOn_1 : [false,false],
+            PcPass_1 : [false,false],
+            PcStyleBack_1 : '',
+            PcStyleColor_1 : '',
+            PassStyleBack_1 : '',
+            PassStyleColor_1 : '',
         }
     },
     props : {
         ItemData : Array,
     },
     methods : {
-        Materials0_result0() {
-            if(this.have_0 == '' || this.need_0 == '') {
+        Materials1_result0() {
+            if(this.have_1 == '' || this.need_1 == '') {
                 return 'N 개'
-                }
+            }
             
             else {
-                this.result_0 = ((this.ItemData[0].buyneed * this.need_0) - this.have_0 - ((this.ItemData[0].shareitem * this.account_0))) + ' 개'
-                return this.result_0
+                this.result_1 = ((this.ItemData[1].buyneed * this.need_1) - this.have_1 - ((this.ItemData[1].shareitem * this.account_1)))
+                
+                if(this.result_1 < 0) {
+                    this.resultmax_1 = '남은 재료'
+                    return Math.abs(this.result_1) + ' 개'
+                }
+                this.resultmax_1 = '필요 재료'
+                return this.result_1 + ' 개'
             }
-
-            // else if(this.have_0 - this.ItemData[0].buyneed * this.need_0 >= 0 ) {
-            //     return '제작 가능'
-            // }
-            
-                // return 'N개'
-            
         },
 
-        Materials0_result1() {
-
-            if(this.have_0 == '' || this.need_0 == '') {
+        Materials1_result1() {
+            if(this.have_1 == '' || this.need_1 == '') {
                 return 'N 주'
             }
+            
+            
+            this.when_1 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 - ((this.ItemData[1].shareitem * this.account_1))) / (this.ItemData[1].getitem + this.ItemData[1].shareitem))
+            
+            if(this.isPcPassOn_1[0] == true && this.isPcPassOn_1[1] == true) {
+                this.when_1 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 - ((this.ItemData[1].shareitem * this.account_1))) / (this.ItemData[1].getitem + this.ItemData[1].shareitem + this.ItemData[1].getpc + this.ItemData[1].getpass))
+            }
 
-            this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 - ((this.ItemData[0].shareitem * this.account_0))) / (this.ItemData[0].getitem + this.ItemData[0].shareitem))
-            if(this.when_0 > 0) {
-                return this.when_0 + ' 주'
+            else if(this.isPcPassOn_1[0] == true) {
+                this.when_0 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 - ((this.ItemData[1].shareitem * this.account_1))) / (this.ItemData[1].getitem + this.ItemData[1].shareitem + this.ItemData[1].getpc))
+            }
+
+            else if(this.isPcPassOn_1[1] == true) {
+                this.when_0 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 - ((this.ItemData[1].shareitem * this.account_1)))  / (this.ItemData[1].getitem + this.ItemData[1].shareitem + this.ItemData[1].getpass))
+            }
+
+            
+
+
+            if(this.when_1 > 0) {
+                return this.when_1 + ' 주'
             }
             else {
                 return '제작 가능'
             }
-        }
+        },
+
+        Pc_1() {
+            this.PcPass_1[0] = !this.PcPass_1[0]
+            if(this.PcPass_1[0] == true) {
+                this.PcStyleBack_1 = '#fff';
+                this.PcStyleColor_1 = '#000';
+                this.isPcPassOn_1[0] = true;
+            }
+            else{
+                this.PcStyleBack_1 = '';
+                this.PcStyleColor_1 = '';
+                this.isPcPassOn_1[0] = false;
+            }
+        },
+        Pass_1() {
+            this.PcPass_1[1] = !this.PcPass_1[1]
+            if(this.PcPass_1[1] == true) {
+                this.PassStyleBack_1 = '#fff';
+                this.PassStyleColor_1 = '#000';
+                this.isPcPassOn_1[1] = true;
+            }
+            else{
+                this.PassStyleBack_1 = '';
+                this.PassStyleColor_1 = '';
+                this.isPcPassOn_1[1] = false;
+            }
+        },
+
+
     }
 
 }
 </script>
 
 <style scoped>
-.Materials0 {
+.Materials {
     height: 700px;
     padding-right: 30px; /* 각 페이지 간격 */
     /* 필수 */
 }
 
-.Materials0_topbox{
-    width: 450px; 
+.Topbox{
+    width: 460px; 
     height: 50px; 
     display: flex;
     padding-top: 50px;
     /* 필수 */
 }
 
-.Materials0_topbox_btn{
+.Topbox_btn{
     height: 35px;
     font-size: 20px;
-    color : #b73aff;
+    color : #3680ff;
     font-family: 'GmarketSansTTFMedium';
     border: none;
     outline: none;
     /* 필수 */
 }
-.name_btn {
+.Name_btn {
     width: 120px;
-    background-color: #f4dfff;
+    background-color: #e1ecff;
     border-radius: 20px;    
     margin-right: 10px;
 }
 
-.itemname_btn {
+.Itemname_btn {
     background-color: transparent;
 }
 
-.minus_btn {
+.Minus_btn {
     width: 35px;
     border-radius: 20px;
-    background-color: #f4dfff;
+    background-color: #e1ecff;
     margin-left: auto;
     cursor: pointer;
 }
 
-.Material0_mainbox{
+.Mainbox{
     width: 460px;
-    height: 520px;
+    height: 500px;
     border-radius: 40px;
     box-shadow: 10px 10px 40px 0 rgba(220, 220, 220, 0.3);
     border: solid 1px #efefef;
@@ -175,27 +217,28 @@ export default {
     padding : 50px;
 }
 
-.Material0_padding_box{
+.Padding_box{
     display: flex;
+    padding-bottom: 20px;
 }
 
-.Material0_padding_box1{
+.Padding_box1{
     width: 190px;
 }
 
-.gray{
+.Gray{
     color:#616161;
 }
 
-.big{
+.Big{
     font-size: 40px;
 }
 
-.Materials0_input_box{
+.Input_box{
     padding-top:40px;
 }
 
-.Materials0_have, .Materials0_need, .Materials0_account{
+.Have, .Need, .Account{
     border-radius: 20px;
     border: solid 1px #efefef;
     background-color: #fff;
@@ -208,7 +251,7 @@ export default {
     font-family: 'GmarketSansTTFMedium';
 }
 
-.bonus_btn{
+.Bonus_btn{
     width: 165px;
     height: 40px;
     border-radius: 20px;
@@ -217,20 +260,15 @@ export default {
     color : #bbbaba;
     margin-top: 40px;
     font-family: 'GmarketSansTTFMedium';
+    cursor: pointer;
 }
 
-.bonus_btn_margin{
+.Bonus_btn_margin{
     margin-left: 30px;
 }
 
-.Material0_character{
-    border-radius: 20px;
-    border: solid 1px #efefef;
+.Bonus_btn:hover{
     background-color: #fff;
-}
-
-.bonus_btn:hover{
     color: #000;
-    background-color: #fff;
 }
 </style>
