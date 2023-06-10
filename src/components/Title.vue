@@ -1,6 +1,12 @@
 <template>
-  <div class="logo">
-    <img src="../assets/images/LOGO_RE.gif">
+  <div class="title">
+    <div class="logo">
+      <img src="../assets/images/LOGO_RE.gif">
+      <img src="../assets/images/reset.png" class="reset_btn" @click="$emit('reset')">
+    </div>
+
+    <div>
+    </div>
   </div>
 </template>
 
@@ -15,5 +21,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.reset_btn{
+  float: right;
+  cursor: pointer;
+  margin:25px;
+}
 </style>

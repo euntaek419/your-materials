@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div>
-      <Title></Title>
+      <Title @reset="reset()"></Title>
     </div>
 
     <div v-if="Materials0 == false && Materials1 == false && Materials2 == false && Materials3 == false">
@@ -10,7 +10,7 @@
 
     <div class="main_box">
       <div v-if="Materials0 == true" class="main">
-        <Materials0 :ItemData="ItemData" @Open0="Open0()" ></Materials0>
+        <Materials0 :ItemData="ItemData" @Open0="Open0()" class="MoveAni"></Materials0>
       </div>
 
       <div v-if="Materials1 == true" class="main">
@@ -107,6 +107,13 @@ export default {
         this.Materials3 = false
       }
     },
+
+    reset() {
+      this.Materials0 = false
+      this.Materials1 = false
+      this.Materials2 = false
+      this.Materials3 = false
+    },
   }
 }
 
@@ -133,6 +140,12 @@ export default {
 
 .main_box{
   display: flex;
+}
+
+.MoveAni {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
 }
 
 

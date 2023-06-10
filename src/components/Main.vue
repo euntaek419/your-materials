@@ -22,15 +22,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .Main{
   text-align: center;
   color: #616161;
   height: 700px;
-  padding-right: 30px;
 }
 
 .Main_img{
   padding-top: 120px;
+  margin-left:120px;
 }
 </style>

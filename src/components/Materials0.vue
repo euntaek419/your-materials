@@ -59,6 +59,7 @@
 </template>
 
 <script>
+
 export default {
     data:() => {
         return {
@@ -74,6 +75,7 @@ export default {
             PcStyleColor_0 : '',
             PassStyleBack_0 : '',
             PassStyleColor_0 : '',
+            zero : 0,
         }
     },
     props : {
@@ -156,8 +158,7 @@ export default {
         },
 
 
-    }
-
+    },
 }
 </script>
 
