@@ -24,6 +24,12 @@
       <div v-if="Materials3 == true" class="main">
         <Materials3 :ItemData="ItemData" @Open3="Open3()"></Materials3>
       </div>
+
+      <div v-if="Materials0 == true || Materials1 == true || Materials2 == true || Materials3 == true" >
+        <Nonebox></Nonebox>
+      </div>
+
+        
     </div>
 
     <div>
@@ -47,6 +53,7 @@ import Materials0 from './components/Materials0.vue';
 import Materials1 from './components/Materials1.vue';
 import Materials2 from './components/Materials2.vue';
 import Materials3 from './components/Materials3.vue';
+import Nonebox from './components/Nonebox.vue';
 import Footer from '@/components/Footer';
 import materialdata from './assets/materialdata'
 
@@ -69,6 +76,7 @@ export default {
     Materials2,
     Materials3,
     Footer,
+    Nonebox,
   
     },
   methods: {
