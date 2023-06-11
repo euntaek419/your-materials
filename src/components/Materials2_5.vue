@@ -64,7 +64,7 @@ export default {
             resultmax_2_5 : '필요 재료',
             when_2_5 : '',
             isPcOn_2_5 : false,
-            Pc_2_5 : false,
+            PcOn_2_5 : false,
             PcStyleBack_2_5 : '',
             PcStyleColor_2_5 : '',
         }
@@ -79,7 +79,7 @@ export default {
             }
             
             else {
-                this.result_2_5 = ((this.ItemData[2].buyneed[1]) - this.have_2_5 - ((this.ItemData[2].shareitem)))
+                this.result_2_5 = ((this.ItemData[2].buyneed[1]) - this.have_2_5 )
                 
                 if(this.result_2_5 < 0) {
                     this.resultmax_2_5 = '남은 재료'
@@ -96,22 +96,11 @@ export default {
             }
             
             
-            this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 - ((this.ItemData[2].shareitem))) / (this.ItemData[2].getitem[1] + this.ItemData[2].shareitem))
+            this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / this.ItemData[2].getitem[1])
             
-            if(this.isPcOn_2_5[0] == true && this.isPcOn_2_5[1] == true) {
-                this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 - ((this.ItemData[2].shareitem))) / (this.ItemData[2].getitem[1] + this.ItemData[2].shareitem + this.ItemData[2].getpc[1]))
+            if(this.isPcOn_2_5 == true) {
+                this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / (this.ItemData[2].getitem[1] + this.ItemData[2].getpc[1]))
             }
-
-            else if(this.isPcOn_2_5[0] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 - ((this.ItemData[2].shareitem))) / (this.ItemData[2].getitem[1] + this.ItemData[2].shareitem + this.ItemData[2].getpc[1]))
-            }
-
-            else if(this.isPcOn_2_5[1] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 - ((this.ItemData[2].shareitem)))  / (this.ItemData[2].getitem[1] + this.ItemData[2].shareitem))
-            }
-
-            
-
 
             if(this.when_2_5 > 0) {
                 return this.when_2_5 + ' 주'
@@ -121,19 +110,19 @@ export default {
             }
         },
 
-        // Pc_2_5() {
-        //     this.Pc_2_5 = !this.Pc_2_5
-        //     if(this.Pc_2_5 == true) {
-        //         this.PcStyleBack_2_5 = '#fff';
-        //         this.PcStyleColor_2_5 = '#000';
-        //         this.isPcOn_2_5 = true;
-        //     }
-        //     else{
-        //         this.PcStyleBack_2_5 = '';
-        //         this.PcStyleColor_2_5 = '';
-        //         this.isPcOn_2_5 = false;
-        //     }
-        // },
+        Pc_2_5() {
+            this.PcOn_2_5 = !this.PcOn_2_5
+            if(this.PcOn_2_5 == true) {
+                this.PcStyleBack_2_5 = '#fff';
+                this.PcStyleColor_2_5 = '#000';
+                this.isPcOn_2_5 = true;
+            }
+            else{
+                this.PcStyleBack_2_5 = '';
+                this.PcStyleColor_2_5 = '';
+                this.isPcOn_2_5 = false;
+            }
+        },
     }
 
 }
@@ -213,7 +202,7 @@ export default {
 }
 
 .Input_box{
-    padding-top:40px;
+    margin-top:120px;
 }
 
 .Have{
@@ -236,7 +225,7 @@ export default {
     border: solid 1px #efefef;
     background-color: #f1f1f1;
     color : #bbbaba;
-    margin-top: 40px;
+    margin-top: 125px;
     font-family: 'GmarketSansTTFMedium';
     cursor: pointer;
 }
