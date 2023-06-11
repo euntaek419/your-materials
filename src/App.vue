@@ -22,7 +22,7 @@
       </div>
 
       <div v-if="Materials2_5 == true" class="main">
-        <Materials2_5 :ItemData="ItemData" @Open2="Open2_5()"></Materials2_5>
+        <Materials2_5 :ItemData="ItemData" @Open2_5="Open2_5()"></Materials2_5>
       </div>
 
       <div v-if="Materials3 == true" class="main">
