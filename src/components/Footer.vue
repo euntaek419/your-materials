@@ -36,7 +36,8 @@
       <div>
         <button class="footer_sub_btn2"
         @click="$emit('Open3')">폭룡왕의 인장</button>
-        <button class="footer_sub_btn2">용의 겁화 ( 미개발 )</button>
+        <button class="footer_sub_btn2"
+        @click="$emit('Open3_5')">용의 겁화</button>
       </div>
 
     </div>

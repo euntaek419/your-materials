@@ -142,6 +142,7 @@ export default {
                 this.PcStyleColor_0 = '';
                 this.isPcPassOn[0] = false;
             }
+            return 
         },
         Pass_0() {
             this.PcPass_0[1] = !this.PcPass_0[1]
