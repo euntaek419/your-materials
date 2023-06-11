@@ -23,7 +23,8 @@
       <div>
         <button class="footer_sub_btn1"
         @click="$emit('Open2')">폭룡왕의 인장</button>
-        <button class="footer_sub_btn1">용의 겁화 ( 미개발 ) </button>
+        <button class="footer_sub_btn1"
+        @click="$emit('Open2_5')">용의 겁화 ( 미개발 ) </button>
       </div>
     </div>
 

@@ -4,7 +4,7 @@
       <Title @reset="reset()"></Title>
     </div>
 
-    <div v-if="Materials0 == false && Materials1 == false && Materials2 == false && Materials3 == false">
+    <div v-if="Materials0 == false && Materials1 == false && Materials2 == false && Materials2_5 == false && Materials3 == false">
       <Main></Main>
     </div>
 
@@ -21,11 +21,15 @@
         <Materials2 :ItemData="ItemData" @Open2="Open2()"></Materials2>
       </div>
 
+      <div v-if="Materials2_5 == true" class="main">
+        <Materials2_5 :ItemData="ItemData" @Open2="Open2_5()"></Materials2_5>
+      </div>
+
       <div v-if="Materials3 == true" class="main">
         <Materials3 :ItemData="ItemData" @Open3="Open3()"></Materials3>
       </div>
 
-      <div v-if="Materials0 == true || Materials1 == true || Materials2 == true || Materials3 == true" >
+      <div v-if="Materials0 == true || Materials1 == true || Materials2 == true || Materials2_5 == true || Materials3 == true" >
         <Nonebox></Nonebox>
       </div>
 
@@ -41,7 +45,7 @@
     </div>
 
     <div>
-      <Footer :ItemData="ItemData" @Open0="Open0()" @Open1="Open1()" @Open2="Open2()" @Open3="Open3()"></Footer>
+      <Footer :ItemData="ItemData" @Open0="Open0()" @Open1="Open1()" @Open2="Open2()" @Open2_5="Open2_5()" @Open3="Open3()"></Footer>
     </div>
   </div>
 </template>
@@ -52,6 +56,7 @@ import Main from '@/components/Main'
 import Materials0 from './components/Materials0.vue';
 import Materials1 from './components/Materials1.vue';
 import Materials2 from './components/Materials2.vue';
+import Materials2_5 from './components/Materials2_5.vue';
 import Materials3 from './components/Materials3.vue';
 import Nonebox from './components/Nonebox.vue';
 import Footer from '@/components/Footer';
@@ -65,6 +70,7 @@ export default {
       Materials0 : false,
       Materials1 : false,
       Materials2 : false,
+      Materials2_5 : false,
       Materials3 : false,
     }
   },
@@ -74,6 +80,7 @@ export default {
     Materials0,
     Materials1,
     Materials2,
+    Materials2_5,
     Materials3,
     Footer,
     Nonebox,
@@ -107,6 +114,15 @@ export default {
       }
     },
 
+    Open2_5() {
+      if(this.Materials2_5 == false) {
+        this.Materials2_5 = true
+      }
+      else if(this.Materials2_5 == true) {
+        this.Materials2_5 = false
+      }
+    },
+
     Open3() {
       if(this.Materials3 == false) {
         this.Materials3 = true
@@ -120,6 +136,7 @@ export default {
       this.Materials0 = false
       this.Materials1 = false
       this.Materials2 = false
+      this.Materials2_5 = false
       this.Materials3 = false
     },
   }
