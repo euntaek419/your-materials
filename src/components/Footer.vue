@@ -57,6 +57,7 @@ export default {
 .footer {
   height: 40px;
   display: flex;
+  position: fixed;
 }
 
 .footer_box{

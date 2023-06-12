@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" ref="wrapper">
     <div>
       <Title @reset="reset()"></Title>
     </div>
@@ -92,7 +92,7 @@ export default {
     Footer,
     Nonebox,
   
-    },
+  },
   methods: {
     Open0() {
       if(this.Materials0 == false) {
@@ -157,7 +157,7 @@ export default {
       this.Materials3 = false
       this.Materials3_5 = false
     },
-  }
+  },
 }
 
 </script>
@@ -184,12 +184,5 @@ export default {
 .main_box{
   display: flex;
 }
-
-.MoveAni {
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-iteration-count: infinite;
-}
-
 
 </style>

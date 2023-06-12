@@ -23,9 +23,18 @@ export default {
 
 <style scoped>
 
+.title{
+  height: 70px;
+}
+
+.logo{
+  position: fixed;
+}
+
 .reset_btn{
-  float: right;
+  position: fixed;
+  top: 50px;
+  right: 50px;
   cursor: pointer;
-  margin:25px;
 }
 </style>

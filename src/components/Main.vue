@@ -31,6 +31,5 @@ export default {
 
 .Main_img{
   padding-top: 120px;
-  margin-left:120px;
 }
 </style>
