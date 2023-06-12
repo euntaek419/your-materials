@@ -99,12 +99,11 @@ export default {
             }
 
             else if(this.isPcPassOn_3_5[0] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5 ) / (this.ItemData[3].getitem[1] + this.ItemData[3].getpc[1]))
-                console.log(this.ItemData[3].getpc[1])
+                this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5 ) / (this.ItemData[3].getitem[1] + this.ItemData[3].getpc[1]))
             }
 
             else if(this.isPcPassOn_3_5[1] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5)  / (this.ItemData[3].getitem[1]  + this.ItemData[3].getpass[1]))
+                this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5)  / (this.ItemData[3].getitem[1]  + this.ItemData[3].getpass[1]))
             }
 
             if(this.when_3_5 > 0) {
@@ -222,7 +221,7 @@ export default {
 }
 
 .Input_box{
-    padding-top:40px;
+    margin-top:120px;
 }
 
 .Have, .Need{
@@ -245,7 +244,7 @@ export default {
     border: solid 1px #efefef;
     background-color: #f1f1f1;
     color : #bbbaba;
-    margin-top: 40px;
+    margin-top: 125px;
     font-family: 'GmarketSansTTFMedium';
     cursor: pointer;
 }
