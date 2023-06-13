@@ -167,6 +167,7 @@ export default {
 .Materials {
     height: 700px;
     padding-right: 30px; /* 각 페이지 간격 */
+    
     /* 필수 */
 }
 

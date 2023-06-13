@@ -183,6 +183,9 @@ export default {
 
 .main_box{
   display: flex;
+  position: fixed;
+  top: 50%;
+  transform: translateY( -50% );
 }
 
 </style>
