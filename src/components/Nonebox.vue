@@ -33,7 +33,7 @@ export default {
     box-shadow: 10px 10px 40px 0 rgba(220, 220, 220, 0.3);
     border: solid 1px #efefef;
     background-color: #f1f1f1;
-    margin-top: 100px;
+    margin-top: 50px;
     display: block;
 }
 

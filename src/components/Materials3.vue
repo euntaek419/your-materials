@@ -186,7 +186,6 @@ export default {
     width: 460px; 
     height: 50px; 
     display: flex;
-    margin-top: 50px;
     /* 필수 */
 }
 

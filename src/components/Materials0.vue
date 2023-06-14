@@ -184,7 +184,6 @@ export default {
     width: 460px;
     height: 50px;
     display: flex;
-    margin-top: 50px;
     /* 필수 */
 }
 
@@ -197,6 +196,7 @@ export default {
     outline: none;
     /* 필수 */
 }
+
 .Name_btn {
     width: 120px;
     background-color: #f4dfff;

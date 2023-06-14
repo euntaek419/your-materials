@@ -181,10 +181,9 @@ export default {
 }
 
 .Topbox{
-    width: 460px; 
-    height: 50px; 
+    width: 460px;
+    height: 50px;
     display: flex;
-    margin-top: 50px;
     /* 필수 */
 }
 

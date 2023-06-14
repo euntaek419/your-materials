@@ -9,27 +9,27 @@
     </div>
 
     <div class="main_box2" ref="scroll_container" @mousewheel="scrollX">
-      <div v-if="Materials0 == true">
-        <Materials0 :ItemData="ItemData" @Open0="Open0()" class="MoveAni"></Materials0>
+      <div v-if="Materials0 == true" class="materials">
+        <Materials0 :ItemData="ItemData" @Open0="Open0()"></Materials0>
       </div>
 
-      <div v-if="Materials1 == true">
+      <div v-if="Materials1 == true" class="materials">
         <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
       </div>
 
-      <div v-if="Materials2 == true">
+      <div v-if="Materials2 == true" class="materials">
         <Materials2 :ItemData="ItemData" @Open2="Open2()"></Materials2>
       </div>
 
-      <div v-if="Materials2_5 == true">
+      <div v-if="Materials2_5 == true" class="materials">
         <Materials2_5 :ItemData="ItemData" @Open2_5="Open2_5()"></Materials2_5>
       </div>
 
-      <div v-if="Materials3 == true">
+      <div v-if="Materials3 == true" class="materials">
         <Materials3 :ItemData="ItemData" @Open3="Open3()"></Materials3>
       </div>
 
-      <div v-if="Materials3_5 == true">
+      <div v-if="Materials3_5 == true" class="materials">
         <Materials3_5 :ItemData="ItemData" @Open3_5="Open3_5()"></Materials3_5>
       </div>
 
@@ -179,12 +179,21 @@ export default {
 .main_box2{
   display: flex;
   position: fixed;
-  top: 55%;
-  transform: translateY( -50% );
+  z-index: 0;
+  /* top: 50%; */
+  /* transform: translateY( -37% ); */
+  transform: translateY( -3% );
   overflow: auto;
   width: 100%;
+  height: 100%;
   white-space: nowrap;
 }
 
+@media (min-height: 900px) {
+  .main_box2{
+    top: 50%;
+    transform: translateY( -30% );
+  }
+}
 
 </style>
