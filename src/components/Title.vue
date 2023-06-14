@@ -22,19 +22,14 @@ export default {
 </script>
 
 <style scoped>
-
-.title{
-  height: 70px;
-}
-
 .logo{
   position: fixed;
 }
 
 .reset_btn{
   position: fixed;
-  top: 50px;
-  right: 50px;
+  top: 5%;
+  right: 5%;
   cursor: pointer;
 }
 </style>
