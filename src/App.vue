@@ -1,51 +1,41 @@
 <template>
-  <div class="wrapper" ref="wrapper">
+  <div class="wrapper" ref="wrapper" @mousewheel="scrollX">
     <div>
       <Title @reset="reset()"></Title>
     </div>
 
-    <div v-if="Materials0 == false && Materials1 == false && Materials2 == false && Materials2_5 == false && Materials3 == false && Materials3_5 == false">
+    <div class="main_box" v-if="Materials0 == false && Materials1 == false && Materials2 == false && Materials2_5 == false && Materials3 == false && Materials3_5 == false">
       <Main></Main>
     </div>
 
-    <div class="main_box">
-      <div v-if="Materials0 == true" class="main">
+    <div class="main_box2" ref="scroll_container" @mousewheel="scrollX">
+      <div v-if="Materials0 == true">
         <Materials0 :ItemData="ItemData" @Open0="Open0()" class="MoveAni"></Materials0>
       </div>
 
-      <div v-if="Materials1 == true" class="main">
+      <div v-if="Materials1 == true">
         <Materials1 :ItemData="ItemData" @Open1="Open1()"></Materials1>
       </div>
 
-      <div v-if="Materials2 == true" class="main">
+      <div v-if="Materials2 == true">
         <Materials2 :ItemData="ItemData" @Open2="Open2()"></Materials2>
       </div>
 
-      <div v-if="Materials2_5 == true" class="main">
+      <div v-if="Materials2_5 == true">
         <Materials2_5 :ItemData="ItemData" @Open2_5="Open2_5()"></Materials2_5>
       </div>
 
-      <div v-if="Materials3 == true" class="main">
+      <div v-if="Materials3 == true">
         <Materials3 :ItemData="ItemData" @Open3="Open3()"></Materials3>
       </div>
 
-      <div v-if="Materials3_5 == true" class="main">
+      <div v-if="Materials3_5 == true">
         <Materials3_5 :ItemData="ItemData" @Open3_5="Open3_5()"></Materials3_5>
       </div>
 
       <div v-if="Materials0 == true || Materials1 == true || Materials2 == true || Materials2_5 == true || Materials3 == true || Materials3_5 == true" >
         <Nonebox></Nonebox>
       </div>
-
-        
-    </div>
-
-    <div>
-      <!-- <your-materials :ItemData="ItemData" @resulture="resultrue"></your-materials> -->
-    </div>
-
-    <div>
-      <!-- <Floating :ItemData="ItemData"></Floating> -->
     </div>
 
     <div>
@@ -94,6 +84,9 @@ export default {
   
   },
   methods: {
+    scrollX(e) {
+    this.$refs['scroll_container'].scrollLeft += e.deltaY;
+    },
     Open0() {
       if(this.Materials0 == false) {
         this.Materials0 = true
@@ -102,7 +95,6 @@ export default {
         this.Materials0 = false
       }
     },
-
     Open1() {
       if(this.Materials1 == false) {
         this.Materials1 = true
@@ -111,7 +103,6 @@ export default {
         this.Materials1 = false
       }
     },
-
     Open2() {
       if(this.Materials2 == false) {
         this.Materials2 = true
@@ -120,7 +111,6 @@ export default {
         this.Materials2 = false
       }
     },
-
     Open2_5() {
       if(this.Materials2_5 == false) {
         this.Materials2_5 = true
@@ -129,7 +119,6 @@ export default {
         this.Materials2_5 = false
       }
     },
-
     Open3() {
       if(this.Materials3 == false) {
         this.Materials3 = true
@@ -138,7 +127,6 @@ export default {
         this.Materials3 = false
       }
     },
-
     Open3_5() {
       if(this.Materials3_5 == false) {
         this.Materials3_5 = true
@@ -147,8 +135,6 @@ export default {
         this.Materials3_5 = false
       }
     },
-
-
     reset() {
       this.Materials0 = false
       this.Materials1 = false
@@ -177,15 +163,28 @@ export default {
   font-family: 'GmarketSansTTFMedium';
   color: black;
   background-color: white;
-  padding-left: 70px;
-  padding-top: 30px;
+  margin-left: 70px;
+  margin-top: 30px;
 }
 
 .main_box{
   display: flex;
   position: fixed;
-  top: 50%;
+  top: 30%;
   transform: translateY( -50% );
+  left: 50%;
+  transform: translateX( -50% );
 }
+
+.main_box2{
+  display: flex;
+  position: fixed;
+  top: 55%;
+  transform: translateY( -50% );
+  overflow: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
 
 </style>
