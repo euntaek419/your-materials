@@ -149,8 +149,7 @@ export default {
 
 <style scoped>
 .Materials {
-    height: 700px;
-    padding-right: 30px; /* 각 페이지 간격 */
+    margin-right: 30px; /* 각 페이지 간격 */
     /* 필수 */
 }
 
@@ -158,7 +157,7 @@ export default {
     width: 460px; 
     height: 50px; 
     display: flex;
-    padding-top: 50px;
+    margin-top: 50px;
     /* 필수 */
 }
 
