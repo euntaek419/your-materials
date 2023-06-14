@@ -131,7 +131,7 @@ export default {
                     return '제작 가능'
                 }
             }
-            else { // PCPASS OFF (this.ItemData[0].shareitem * this.account_0)
+            else { // PCPASS OFF
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 ) / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem ))
                 if(this.when_0 > 0) {
                 return this.when_0 + ' 주'
@@ -184,6 +184,7 @@ export default {
     width: 460px;
     height: 50px;
     display: flex;
+    margin-top: 50px;
     /* 필수 */
 }
 

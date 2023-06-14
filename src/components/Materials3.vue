@@ -86,7 +86,7 @@ export default {
             }
             
             else {
-                this.result_3 = ((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 - ((this.ItemData[3].shareitem * this.account_3)))
+                this.result_3 = (this.ItemData[3].buyneed[0] * this.need_3) - this.have_3
                 
                 if(this.result_3 < 0) {
                     this.resultmax_3 = '남은 재료'
@@ -102,29 +102,44 @@ export default {
                 return 'N 주'
             }
             
-            
-            this.when_3 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 - ((this.ItemData[3].shareitem * this.account_3))) / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem))
-            
             if(this.isPcPassOn_3[0] == true && this.isPcPassOn_3[1] == true) {
-                this.when_3 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 - ((this.ItemData[3].shareitem * this.account_3))) / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem + this.ItemData[3].getpc[0] + this.ItemData[3].getpass[0]))
+                this.when_3 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 ) / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem * this.account_3 + this.ItemData[3].shareitem + this.ItemData[3].getpc[0] + this.ItemData[3].getpass[0]))
+                if(this.when_3 > 0) {
+                    return this.when_3 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
 
             else if(this.isPcPassOn_3[0] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 - ((this.ItemData[3].shareitem * this.account_3))) / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem + this.ItemData[3].getpc[0]))
+                this.when_0 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 ) / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem * this.account_3 + this.ItemData[3].shareitem + this.ItemData[3].getpc[0]))
+                if(this.when_3 > 0) {
+                    return this.when_3 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
 
             else if(this.isPcPassOn_3[1] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 - ((this.ItemData[3].shareitem * this.account_3)))  / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem + this.ItemData[3].getpass[0]))
+                this.when_0 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 )  / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem * this.account_3 + this.ItemData[3].shareitem + this.ItemData[3].getpass[0]))
+                if(this.when_3 > 0) {
+                    return this.when_3 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
 
-            
-
-
-            if(this.when_3 > 0) {
-                return this.when_3 + ' 주'
-            }
             else {
-                return '제작 가능'
+                this.when_3 = Math.ceil(((this.ItemData[3].buyneed[0] * this.need_3) - this.have_3 ) / (this.ItemData[3].getitem[0] + this.ItemData[3].shareitem * this.account_3 + this.ItemData[3].shareitem) )
+                if(this.when_3 > 0) {
+                    return this.when_3 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
         },
 

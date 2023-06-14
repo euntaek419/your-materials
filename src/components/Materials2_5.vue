@@ -95,11 +95,12 @@ export default {
                 return 'N 주'
             }
             
-            
-            this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / this.ItemData[2].getitem[1])
-            
             if(this.isPcOn_2_5 == true) {
                 this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / (this.ItemData[2].getitem[1] + this.ItemData[2].getpc[1]))
+            }
+
+            else {
+                this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / this.ItemData[2].getitem[1])
             }
 
             if(this.when_2_5 > 0) {

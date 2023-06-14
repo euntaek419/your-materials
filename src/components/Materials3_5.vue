@@ -92,25 +92,45 @@ export default {
                 return 'N 주'
             }
             
-            this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5 ) / (this.ItemData[3].getitem[1]))
-            
             if(this.isPcPassOn_3_5[0] == true && this.isPcPassOn_3_5[1] == true) {
                 this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5 ) / (this.ItemData[3].getitem[1] + this.ItemData[3].getpc[1] + this.ItemData[3].getpass[1]))
+                if(this.when_3_5 > 0) {
+                    return this.when_3_5 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
 
             else if(this.isPcPassOn_3_5[0] == true) {
                 this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5 ) / (this.ItemData[3].getitem[1] + this.ItemData[3].getpc[1]))
+                if(this.when_3_5 > 0) {
+                    return this.when_3_5 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
+                
 
             else if(this.isPcPassOn_3_5[1] == true) {
                 this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5)  / (this.ItemData[3].getitem[1]  + this.ItemData[3].getpass[1]))
+                if(this.when_3_5 > 0) {
+                    return this.when_3_5 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
 
-            if(this.when_3_5 > 0) {
-                return this.when_3_5 + ' 주'
-            }
             else {
-                return '제작 가능'
+                this.when_3_5 = Math.ceil(((this.ItemData[3].buyneed[1]) - this.have_3_5 ) / (this.ItemData[3].getitem[1]))
+                if(this.when_3_5 > 0) {
+                    return this.when_3_5 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
         },
 
