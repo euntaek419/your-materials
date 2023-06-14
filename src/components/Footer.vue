@@ -33,7 +33,7 @@
         {{ ItemData[3].subname }}
       </button> 
 
-      <div>
+      <div style="width:250px">
         <button class="footer_sub_btn2"
         @click="$emit('Open3')">폭룡왕의 인장</button>
         <button class="footer_sub_btn2"
@@ -55,14 +55,13 @@ export default {
 
 <style>
 .footer {
-  height: 40px;
   display: flex;
   position: fixed;
-  bottom: 50px;
+  bottom: 2%;
 }
 
 .footer_box{
-  width: 460px;
+  width: 300px; /*460*/
   display: flex;
 }
 
