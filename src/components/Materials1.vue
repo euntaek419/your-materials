@@ -169,7 +169,20 @@ export default {
                 this.isPcPassOn_1[1] = false;
             }
         },
-    }
+    },
+    watch: {
+        have_1(){
+            return this.have_1 = this.have_1.replace(/[^0-9]/g, '');
+        },
+
+        need_1(){
+            return this.need_1 = this.need_1.replace(/[^0-9]/g, '');
+        },
+
+        account_1(){
+            return this.account_1 = this.account_1.replace(/[^0-9]/g, '');
+        },
+    },
 }
 </script>
 

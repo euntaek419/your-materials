@@ -159,6 +159,13 @@ export default {
   src : url('assets/fonts/GmarketSansTTFMedium.ttf');
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .wrapper{
   font-family: 'GmarketSansTTFMedium';
   color: black;

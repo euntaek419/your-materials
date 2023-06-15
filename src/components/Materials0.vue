@@ -32,7 +32,7 @@
 
           <div class="Input_box">
             <label class="Gray"> 보유 재료
-              <input class="Have" maxlength='4' v-model="have_0">
+              <input class="Have" v-model="have_0" maxlength="4">
             </label>
           </div>
 
@@ -171,6 +171,19 @@ export default {
         },
 
 
+    },
+    watch: {
+        have_0(){
+            return this.have_0 = this.have_0.replace(/[^0-9]/g, '');
+        },
+
+        need_0(){
+            return this.need_0 = this.need_0.replace(/[^0-9]/g, '');
+        },
+
+        account_0(){
+            return this.account_0 = this.account_0.replace(/[^0-9]/g, '');
+        },
     },
 }
 </script>

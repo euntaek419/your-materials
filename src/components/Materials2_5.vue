@@ -124,7 +124,13 @@ export default {
                 this.isPcOn_2_5 = false;
             }
         },
-    }
+    },
+
+    watch: {
+        have_2_5(){
+            return this.have_2_5 = this.have_2_5.replace(/[^0-9]/g, '');
+        },
+    },
 
 }
 </script>

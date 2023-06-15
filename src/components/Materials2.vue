@@ -176,7 +176,20 @@ export default {
         },
 
 
-    }
+    },
+    watch: {
+        have_2(){
+            return this.have_2 = this.have_2.replace(/[^0-9]/g, '');
+        },
+
+        need_2(){
+            return this.need_2 = this.need_2.replace(/[^0-9]/g, '');
+        },
+
+        account_2(){
+            return this.account_2 = this.account_2.replace(/[^0-9]/g, '');
+        },
+    },
 
 }
 </script>

@@ -160,9 +160,12 @@ export default {
                 this.isPcPassOn_3_5[1] = false;
             }
         },
-
-
-    }
+    },
+    watch: {
+        have_3_5(){
+            return this.have_3_5 = this.have_3_5.replace(/[^0-9]/g, '');
+        },
+    },
 
 }
 </script>

@@ -169,9 +169,20 @@ export default {
                 this.isPcPassOn_3[1] = false;
             }
         },
+    },
+    watch: {
+        have_3(){
+            return this.have_3 = this.have_3.replace(/[^0-9]/g, '');
+        },
 
+        need_3(){
+            return this.need_3 = this.need_3.replace(/[^0-9]/g, '');
+        },
 
-    }
+        account_3(){
+            return this.account_3 = this.account_3.replace(/[^0-9]/g, '');
+        },
+    },
 
 }
 </script>
