@@ -69,7 +69,6 @@ export default {
             result_0 : '',
             resultmax_0 : '필요 재료',
             when_0 : '',
-            isPcPassOn : [false,false],
             PcPass_0 : [false,false],
             PcStyleBack_0 : '',
             PcStyleColor_0 : '',
@@ -102,7 +101,7 @@ export default {
                 return 'N 주'
             }
             
-            if(this.isPcPassOn[0] == true && this.isPcPassOn[1] == true) { // 피시방 PASS ON
+            if(this.PcPass_0[0] == true && this.PcPass_0[1] == true) { // 피시방 PASS ON
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 )  / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpc + this.ItemData[0].getpass ))
                 if(this.when_0 > 0) {
                 return this.when_0 + ' 주'
@@ -112,7 +111,7 @@ export default {
                 }
             }
 
-            else if(this.isPcPassOn[0] == true) { // PC방 ON
+            else if(this.PcPass_0[0] == true) { // PC방 ON
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 ) / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpc ))
                 if(this.when_0 > 0) {
                 return this.when_0 + ' 주'
@@ -122,7 +121,7 @@ export default {
                 }
             }
 
-            else if(this.isPcPassOn[1] == true) { // PASS ON
+            else if(this.PcPass_0[1] == true) { // PASS ON
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 )  / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpass ))
                 if(this.when_0 > 0) {
                 return this.when_0 + ' 주'
@@ -147,12 +146,10 @@ export default {
             if(this.PcPass_0[0] == true) {
                 this.PcStyleBack_0 = '#fff';
                 this.PcStyleColor_0 = '#000';
-                this.isPcPassOn[0] = true;
             }
             else{
                 this.PcStyleBack_0 = '';
                 this.PcStyleColor_0 = '';
-                this.isPcPassOn[0] = false;
             }
             return 
         },
@@ -161,16 +158,12 @@ export default {
             if(this.PcPass_0[1] == true) {
                 this.PassStyleBack_0 = '#fff';
                 this.PassStyleColor_0 = '#000';
-                this.isPcPassOn[1] = true;
             }
             else{
                 this.PassStyleBack_0 = '';
                 this.PassStyleColor_0 = '';
-                this.isPcPassOn[1] = false;
             }
         },
-
-
     },
     watch: {
         have_0(){

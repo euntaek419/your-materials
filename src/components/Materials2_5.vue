@@ -63,7 +63,6 @@ export default {
             result_2_5 : '',
             resultmax_2_5 : '필요 재료',
             when_2_5 : '',
-            isPcOn_2_5 : false,
             PcOn_2_5 : false,
             PcStyleBack_2_5 : '',
             PcStyleColor_2_5 : '',
@@ -95,7 +94,7 @@ export default {
                 return 'N 주'
             }
             
-            if(this.isPcOn_2_5 == true) {
+            if(this.PcOn_2_5 == true) {
                 this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / (this.ItemData[2].getitem[1] + this.ItemData[2].getpc[1]))
             }
 
@@ -116,12 +115,10 @@ export default {
             if(this.PcOn_2_5 == true) {
                 this.PcStyleBack_2_5 = '#fff';
                 this.PcStyleColor_2_5 = '#000';
-                this.isPcOn_2_5 = true;
             }
             else{
                 this.PcStyleBack_2_5 = '';
                 this.PcStyleColor_2_5 = '';
-                this.isPcOn_2_5 = false;
             }
         },
     },

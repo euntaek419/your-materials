@@ -68,7 +68,6 @@ export default {
             result_1 : '',
             resultmax_1 : '필요 재료',
             when_1 : '',
-            isPcPassOn_1 : [false,false],
             PcPass_1 : [false,false],
             PcStyleBack_1 : '',
             PcStyleColor_1 : '',
@@ -102,7 +101,7 @@ export default {
                 return 'N 주'
             }
             
-            if(this.isPcPassOn_1[0] == true && this.isPcPassOn_1[1] == true) {
+            if(this.PcPass_1[0] == true && this.PcPass_1[1] == true) {
                 this.when_1 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 ) / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpc + this.ItemData[1].getpass))
                 if(this.when_1 > 0) {
                     return this.when_1 + ' 주'
@@ -112,7 +111,7 @@ export default {
                 }
             }
 
-            else if(this.isPcPassOn_1[0] == true) {
+            else if(this.PcPass_1[0] == true) {
                 this.when_0 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 ) / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpc))
                 if(this.when_1 > 0) {
                     return this.when_1 + ' 주'
@@ -122,7 +121,7 @@ export default {
                 }
             }
 
-            else if(this.isPcPassOn_1[1] == true) {
+            else if(this.PcPass_1[1] == true) {
                 this.when_0 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 )  / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpass))
                 if(this.when_1 > 0) {
                     return this.when_1 + ' 주'
@@ -148,12 +147,10 @@ export default {
             if(this.PcPass_1[0] == true) {
                 this.PcStyleBack_1 = '#fff';
                 this.PcStyleColor_1 = '#000';
-                this.isPcPassOn_1[0] = true;
             }
             else{
                 this.PcStyleBack_1 = '';
                 this.PcStyleColor_1 = '';
-                this.isPcPassOn_1[0] = false;
             }
         },
         Pass_1() {
@@ -161,12 +158,10 @@ export default {
             if(this.PcPass_1[1] == true) {
                 this.PassStyleBack_1 = '#fff';
                 this.PassStyleColor_1 = '#000';
-                this.isPcPassOn_1[1] = true;
             }
             else{
                 this.PassStyleBack_1 = '';
                 this.PassStyleColor_1 = '';
-                this.isPcPassOn_1[1] = false;
             }
         },
     },
