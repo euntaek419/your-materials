@@ -19,12 +19,15 @@
             <div class="Padding_box">
               <div class="Padding_box1">
                   <div class="Gray">{{ resultmax_0 }}</div>
-                  <div class="Big" >{{ Materials0_result0() }} </div>
+                  <div class="Hide">{{ Materials0_result0() }} </div>
+                  <div class="Big" >{{ Math.abs(resultweened_0.toFixed(0)) + ' 개' }} </div>
               </div>
 
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
-                <div class="Big">{{ Materials0_result1() }}</div>
+                <div class="Hide">{{ Materials0_result1() }}</div>
+                <div class="Big" v-if="when_0 > 0 || when_0 == '' ">{{ whentweened_0.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_0 < 0">{{ '제작가능' }} </div>
               </div>
             </div>
 
@@ -59,6 +62,7 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 
 export default {
     data:() => {
@@ -74,6 +78,8 @@ export default {
             PcStyleColor_0 : '',
             PassStyleBack_0 : '',
             PassStyleColor_0 : '',
+            resultweened_0: 0,
+            whentweened_0: 0,
         }
     },
     props : {
@@ -82,27 +88,25 @@ export default {
     methods : {
         Materials0_result0() {
             if(this.have_0 == '' || this.need_0 == '') {
-                return 'N 개'
+                return this.result_0 = 0;
             }
             else {
                 this.result_0 = (this.ItemData[0].buyneed * this.need_0) - this.have_0
 
                 if(this.result_0 < 0) {
-                    this.resultmax_0 = '남은 재료'
-                    return Math.abs(this.result_0) + ' 개'
+                    return this.resultmax_0 = '남은 재료'
                 }
-                this.resultmax_0 = '필요 재료'
-                    return this.result_0 + ' 개'
+                return this.resultmax_0 = '필요 재료'
             }
         },
 
         Materials0_result1() {
             if(this.have_0 == '' || this.need_0 == '') {
-                return 'N 주'
+                return this.when_0 = 0;
             }
             
             if(this.PcPass_0[0] == true && this.PcPass_0[1] == true) { // 피시방 PASS ON
-                this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 )  / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpc + this.ItemData[0].getpass ))
+                this.when_0 = Math.ceil((this.ItemData[0].buyneed * this.need_0 - this.have_0 )  / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpc + this.ItemData[0].getpass ))
                 if(this.when_0 > 0) {
                 return this.when_0 + ' 주'
                 }
@@ -133,6 +137,7 @@ export default {
             else { // PCPASS OFF
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 ) / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem ))
                 if(this.when_0 > 0) {
+                    console.log(this.when_0)
                 return this.when_0 + ' 주'
                 }
                 else {
@@ -177,6 +182,12 @@ export default {
         account_0(){
             return this.account_0 = this.account_0.replace(/[^0-9]/g, '');
         },
+        result_0(n){
+            gsap.to(this, { duration: 0.5, resultweened_0: Number(n) || 0 })
+        },
+        when_0(n){
+            gsap.to(this, { duration: 0.5, whentweened_0: Number(n) || 0 })
+        }
     },
 }
 </script>
@@ -288,5 +299,9 @@ export default {
 .Bonus_btn:hover{
     background-color: #fff;
     color: #000;
+}
+
+.Hide{
+    display:none
 }
 </style>

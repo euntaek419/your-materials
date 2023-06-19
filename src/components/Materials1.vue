@@ -19,12 +19,15 @@
             <div class="Padding_box">
               <div class="Padding_box1">
                   <div class="Gray">{{ resultmax_1 }}</div>
-                  <div class="Big" >{{ Materials1_result0() }} </div>
+                  <div class="Hide">{{ Materials1_result0() }} </div>
+                  <div class="Big" >{{ Math.abs(resultweened_1.toFixed(0)) + ' 개' }} </div>
               </div>
 
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
-                <div class="Big">{{ Materials1_result1() }}</div>
+                <div class="Hide">{{ Materials1_result1() }}</div>
+                <div class="Big" v-if="when_1 > 0 || when_1 == '' ">{{ whentweened_1.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_1 < 0">{{ '제작가능' }} </div>
               </div>
             </div>
 
@@ -59,6 +62,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+
 export default {
     data:() => {
         return {
@@ -73,6 +78,8 @@ export default {
             PcStyleColor_1 : '',
             PassStyleBack_1 : '',
             PassStyleColor_1 : '',
+            resultweened_1: 0,
+            whentweened_1: 0,
         }
     },
     props : {
@@ -81,28 +88,26 @@ export default {
     methods : {
         Materials1_result0() {
             if(this.have_1 == '' || this.need_1 == '') {
-                return 'N 개'
+                return this.result_1 = 0;
             }
             
             else {
                 this.result_1 = (this.ItemData[1].buyneed * this.need_1) - this.have_1
                 
                 if(this.result_1 < 0) {
-                    this.resultmax_1 = '남은 재료'
-                    return Math.abs(this.result_1) + ' 개'
+                    return this.resultmax_1 = '남은 재료'
                 }
-                this.resultmax_1 = '필요 재료'
-                return this.result_1 + ' 개'
+                return this.resultmax_1 = '필요 재료'
             }
         },
 
         Materials1_result1() {
             if(this.have_1 == '' || this.need_1 == '') {
-                return 'N 주'
+                return this.when_1 = 0;
             }
             
             if(this.PcPass_1[0] == true && this.PcPass_1[1] == true) {
-                this.when_1 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 ) / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpc + this.ItemData[1].getpass))
+                this.when_1 = Math.ceil((this.ItemData[1].buyneed * this.need_1 - this.have_1 ) / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpc + this.ItemData[1].getpass))
                 if(this.when_1 > 0) {
                     return this.when_1 + ' 주'
                 }
@@ -112,7 +117,7 @@ export default {
             }
 
             else if(this.PcPass_1[0] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 ) / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpc))
+                this.when_1 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 ) / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpc))
                 if(this.when_1 > 0) {
                     return this.when_1 + ' 주'
                 }
@@ -122,7 +127,7 @@ export default {
             }
 
             else if(this.PcPass_1[1] == true) {
-                this.when_0 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 )  / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpass))
+                this.when_1 = Math.ceil(((this.ItemData[1].buyneed * this.need_1) - this.have_1 )  / (this.ItemData[1].getitem + this.ItemData[1].shareitem * this.account_1 + this.ItemData[1].shareitem + this.ItemData[1].getpass))
                 if(this.when_1 > 0) {
                     return this.when_1 + ' 주'
                 }
@@ -177,6 +182,12 @@ export default {
         account_1(){
             return this.account_1 = this.account_1.replace(/[^0-9]/g, '');
         },
+        result_1(n){
+            gsap.to(this, { duration: 0.5, resultweened_1: Number(n) || 0 })
+        },
+        when_1(n){
+            gsap.to(this, { duration: 0.5, whentweened_1: Number(n) || 0 })
+        }
     },
 }
 </script>
@@ -289,5 +300,9 @@ export default {
 .Bonus_btn:hover{
     background-color: #fff;
     color: #000;
+}
+
+.Hide{
+    display: none;
 }
 </style>
