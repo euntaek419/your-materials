@@ -26,8 +26,8 @@
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
                 <div class="Hide">{{ Materials0_result1() }}</div>
-                <div class="Big" v-if="when_0 > 0 || when_0 == '' ">{{ whentweened_0.toFixed(0) + ' 주' }} </div>
-                <div class="Big" v-if="when_0 < 0">{{ '제작가능' }} </div>
+                <div class="Big" v-if="when_0 > 0 || have_0 == '' || need_0 == '' ">{{ whentweened_0.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_0 <= 0 && have_0 !== '' && need_0 !== ''">{{ '제작 가능' }} </div>
               </div>
             </div>
 
@@ -108,7 +108,7 @@ export default {
             if(this.PcPass_0[0] == true && this.PcPass_0[1] == true) { // 피시방 PASS ON
                 this.when_0 = Math.ceil((this.ItemData[0].buyneed * this.need_0 - this.have_0 )  / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpc + this.ItemData[0].getpass ))
                 if(this.when_0 > 0) {
-                return this.when_0 + ' 주'
+                    return this.when_0 + ' 주'
                 }
                 else {
                     return '제작 가능'
@@ -118,7 +118,7 @@ export default {
             else if(this.PcPass_0[0] == true) { // PC방 ON
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 ) / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpc ))
                 if(this.when_0 > 0) {
-                return this.when_0 + ' 주'
+                    return this.when_0 + ' 주'
                 }
                 else {
                     return '제작 가능'
@@ -128,7 +128,7 @@ export default {
             else if(this.PcPass_0[1] == true) { // PASS ON
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 )  / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem + this.ItemData[0].getpass ))
                 if(this.when_0 > 0) {
-                return this.when_0 + ' 주'
+                    return this.when_0 + ' 주'
                 }
                 else {
                     return '제작 가능'
@@ -137,8 +137,7 @@ export default {
             else { // PCPASS OFF
                 this.when_0 = Math.ceil(((this.ItemData[0].buyneed * this.need_0) - this.have_0 ) / (this.ItemData[0].getitem + this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].shareitem ))
                 if(this.when_0 > 0) {
-                    console.log(this.when_0)
-                return this.when_0 + ' 주'
+                    return this.when_0 + ' 주'
                 }
                 else {
                     return '제작 가능'
