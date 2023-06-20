@@ -19,12 +19,15 @@
             <div class="Padding_box">
               <div class="Padding_box1">
                   <div class="Gray">{{ resultmax_2_5 }}</div>
-                  <div class="Big" >{{ Materials2_5_result0() }} </div>
+                  <div class="Hide" >{{ Materials2_5_result0() }} </div>
+                  <div class="Big" >{{ Math.abs(resultweened_2_5.toFixed(0)) + ' 개' }} </div>
               </div>
 
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
-                <div class="Big">{{ Materials2_5_result1() }}</div>
+                <div class="Hide">{{ Materials2_5_result1() }}</div>
+                <div class="Big" v-if="when_2_5 > 0 || have_2_5 == '' ">{{ whentweened_2_5.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_2_5 <= 0 && have_2_5 !== '' ">{{ '제작가능' }} </div>
               </div>
             </div>
 
@@ -36,18 +39,9 @@
             </label>
           </div>
 
-          <!--
-          <div class="Input_box">
-            <label class="Gray"> 융합 개수
-              <input class="Need" maxlength='2' v-model="need_2_5">
-            </label>
-          </div>
-          -->
-
-
           <div>
             <button class="Bonus_btn" @click="Pc_2_5" :style="{ backgroundColor : PcStyleBack_2_5, color: PcStyleColor_2_5 }">PC방</button>
-            <button class="Bonus_btn1 Bonus_btn_margin" disabled>PASS</button>
+            <button class="Bonus_btn1 Bonus_btn_margin" disabled title="개전에서 PASS로는 용의 겁화를 추가로 획득하실 수 없습니다. ">PASS</button>
           </div>
         </div>
     </div>
@@ -56,6 +50,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+
 export default {
     data:() => {
         return {
@@ -66,6 +62,8 @@ export default {
             PcOn_2_5 : false,
             PcStyleBack_2_5 : '',
             PcStyleColor_2_5 : '',
+            resultweened_2_5: 0,
+            whentweened_2_5: 0,
         }
     },
     props : {
@@ -74,7 +72,7 @@ export default {
     methods : {
         Materials2_5_result0() {
             if(this.have_2_5 == '') {
-                return 'N 개'
+                return this.result_2_5 = 0;
             }
             
             else {
@@ -84,29 +82,31 @@ export default {
                     this.resultmax_2_5 = '남은 재료'
                     return Math.abs(this.result_2_5) + ' 개'
                 }
-                this.resultmax_2_5 = '필요 재료'
-                return this.result_2_5 + ' 개'
             }
+            return this.resultmax_2_5 = '필요 재료'
+            
         },
 
         Materials2_5_result1() {
             if(this.have_2_5 == '') {
-                return 'N 주'
-            }
-            
-            if(this.PcOn_2_5 == true) {
-                this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / (this.ItemData[2].getitem[1] + this.ItemData[2].getpc[1]))
+                return this.when_2_5 = 0;
             }
 
             else {
-                this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / this.ItemData[2].getitem[1])
-            }
+                if(this.PcOn_2_5 == true) {
+                    this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / (this.ItemData[2].getitem[1] + this.ItemData[2].getpc[1]))
+                }
 
-            if(this.when_2_5 > 0) {
-                return this.when_2_5 + ' 주'
-            }
-            else {
-                return '제작 가능'
+                else {
+                    this.when_2_5 = Math.ceil(((this.ItemData[2].buyneed[1]) - this.have_2_5 ) / this.ItemData[2].getitem[1])
+                }
+
+                if(this.when_2_5 > 0) {
+                    return this.when_2_5 + ' 주'
+                }
+                else {
+                    return '제작 가능'
+                }
             }
         },
 
@@ -127,6 +127,12 @@ export default {
         have_2_5(){
             return this.have_2_5 = this.have_2_5.replace(/[^0-9]/g, '');
         },
+        result_2_5(n){
+            gsap.to(this, { duration: 0.5, resultweened_2_5: Number(n) || 0 })
+        },
+        when_2_5(n){
+            gsap.to(this, { duration: 0.5, whentweened_2_5: Number(n) || 0 })
+        }
     },
 
 }
@@ -250,5 +256,9 @@ export default {
 .Bonus_btn:hover{
     background-color: #fff;
     color: #000;
+}
+
+.Hide{
+    display:none;
 }
 </style>

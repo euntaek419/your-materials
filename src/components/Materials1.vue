@@ -26,8 +26,8 @@
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
                 <div class="Hide">{{ Materials1_result1() }}</div>
-                <div class="Big" v-if="when_1 > 0 || when_1 == '' ">{{ whentweened_1.toFixed(0) + ' 주' }} </div>
-                <div class="Big" v-if="when_1 < 0">{{ '제작가능' }} </div>
+                <div class="Big" v-if="when_1 > 0 || have_1 == '' || need_1 == '' ">{{ whentweened_1.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_1 <= 0 && have_1 !== '' && need_1 !== ''">{{ '제작가능' }} </div>
               </div>
             </div>
 
