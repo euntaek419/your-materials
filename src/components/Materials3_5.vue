@@ -19,12 +19,15 @@
             <div class="Padding_box">
               <div class="Padding_box1">
                   <div class="Gray">{{ resultmax_3_5 }}</div>
-                  <div class="Big" >{{ Materials3_result0() }} </div>
+                  <div class="Hide" >{{ Materials3_result0() }} </div>
+                  <div class="Big" >{{ Math.abs(resultweened_3_5.toFixed(0)) + ' 개' }} </div>
               </div>
 
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
-                <div class="Big">{{ Materials3_result1() }}</div>
+                <div class="Hide">{{ Materials3_result1() }}</div>
+                <div class="Big" v-if="when_3_5 > 0 || have_3_5 == '' ">{{ whentweened_3_5.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_3_5 <= 0 && have_3_5 !== '' ">{{ '제작가능' }} </div>
               </div>
             </div>
 
@@ -51,6 +54,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+
 export default {
     data:() => {
         return {
@@ -63,6 +68,8 @@ export default {
             PcStyleColor_3_5 : '',
             PassStyleBack_3_5 : '',
             PassStyleColor_3_5 : '',
+            resultweened_3_5: 0,
+            whentweened_3_5: 0,
         }
     },
     props : {
@@ -71,7 +78,7 @@ export default {
     methods : {
         Materials3_result0() {
             if(this.have_3_5 == '') {
-                return 'N 개'
+                return this.result_3_5 = 0;
             }
             
             else {
@@ -81,14 +88,13 @@ export default {
                     this.resultmax_3_5 = '남은 재료'
                     return Math.abs(this.result_3_5) + ' 개'
                 }
-                this.resultmax_3_5 = '필요 재료'
-                return this.result_3_5 + ' 개'
+                return this.resultmax_3_5 = '필요 재료'    
             }
         },
 
         Materials3_result1() {
             if(this.have_3_5 == '') {
-                return 'N 주'
+                return this.when_3_5 = 0;
             }
             
             if(this.PcPass_3_5[0] == true && this.PcPass_3_5[1] == true) {
@@ -160,6 +166,12 @@ export default {
         have_3_5(){
             return this.have_3_5 = this.have_3_5.replace(/[^0-9]/g, '');
         },
+        result_3_5(n){
+            gsap.to(this, { duration: 0.5, resultweened_3_5: Number(n) || 0 })
+        },
+        when_3_5(n){
+            gsap.to(this, { duration: 0.5, whentweened_3_5: Number(n) || 0 })
+        }
     },
 
 }
@@ -272,5 +284,9 @@ export default {
 .Bonus_btn:hover{
     background-color: #fff;
     color: #000;
+}
+
+.Hide{
+    display:none;
 }
 </style>

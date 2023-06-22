@@ -84,7 +84,6 @@ export default {
                 }
             }
             return this.resultmax_2_5 = '필요 재료'
-            
         },
 
         Materials2_5_result1() {
