@@ -19,12 +19,15 @@
             <div class="Padding_box">
               <div class="Padding_box1">
                   <div class="Gray">{{ resultmax_3 }}</div>
-                  <div class="Big" >{{ Materials3_result0() }} </div>
+                  <div class="Hide" >{{ Materials3_result0() }} </div>
+                  <div class="Big" >{{ Math.abs(resultweened_1.toFixed(0)) + ' 개' }} </div>
               </div>
 
               <div class="Padding_box2">
                 <div class="Gray">소요 기간</div>
-                <div class="Big">{{ Materials3_result1() }}</div>
+                <div class="Hide">{{ Materials3_result1() }}</div>
+                <div class="Big" v-if="when_3 > 0 || have_3 == '' || need_3 == '' ">{{ whentweened_3.toFixed(0) + ' 주' }} </div>
+                <div class="Big" v-if="when_3 <= 0 && have_3 !== '' && need_3 !== ''">{{ '제작가능' }} </div>
               </div>
             </div>
 
@@ -59,6 +62,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+
 export default {
     data:() => {
         return {
@@ -73,6 +78,8 @@ export default {
             PcStyleColor_3 : '',
             PassStyleBack_3 : '',
             PassStyleColor_3 : '',
+            resultweened_3: 0,
+            whentweened_3: 0,
         }
     },
     props : {
@@ -81,18 +88,18 @@ export default {
     methods : {
         Materials3_result0() {
             if(this.have_3 == '' || this.need_3 == '') {
-                return 'N 개'
+                return this.result_3 = 0;
             }
             
             else {
                 this.result_3 = (this.ItemData[3].buyneed[0] * this.need_3) - this.have_3
                 
                 if(this.result_3 < 0) {
-                    this.resultmax_3 = '남은 재료'
-                    return Math.abs(this.result_3) + ' 개'
+                    return this.resultmax_3 = '남은 재료'
+                    
                 }
-                this.resultmax_3 = '필요 재료'
-                return this.result_3 + ' 개'
+                return this.resultmax_3 = '필요 재료'
+                
             }
         },
 
@@ -177,6 +184,12 @@ export default {
         account_3(){
             return this.account_3 = this.account_3.replace(/[^0-9]/g, '');
         },
+        result_3(n){
+            gsap.to(this, { duration: 0.5, resultweened_3: Number(n) || 0 })
+        },
+        when_3(n){
+            gsap.to(this, { duration: 0.5, whentweened_3: Number(n) || 0 })
+        }
     },
 
 }
@@ -289,5 +302,9 @@ export default {
 .Bonus_btn:hover{
     background-color: #fff;
     color: #000;
+}
+
+.Hide{
+    display:none;
 }
 </style>
