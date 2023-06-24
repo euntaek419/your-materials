@@ -80,6 +80,8 @@ export default {
             PassStyleColor_0 : '',
             resultweened_0: 0,
             whentweened_0: 0,
+            // numerator: this.ItemData[0].buyneed * this.need_0 - this.have_0,
+            // denominator: this.ItemData[0].shareitem * this.account_0 + this.ItemData[0].getitem + this.ItemData[0].shareitem,
         }
     },
     props : {
@@ -91,7 +93,7 @@ export default {
                 return this.result_0 = 0;
             }
             else {
-                this.result_0 = (this.ItemData[0].buyneed * this.need_0) - this.have_0
+                this.result_0 = this.ItemData[0].buyneed * this.need_0 - this.have_0
 
                 if(this.result_0 < 0) {
                     return this.resultmax_0 = '남은 재료'

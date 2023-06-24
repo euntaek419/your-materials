@@ -39,10 +39,6 @@
             </label>
           </div>
 
-
-
-
-
           <div>
             <button class="Bonus_btn" @click="Pc_3_5" :style="{ backgroundColor : PcStyleBack_3_5, color: PcStyleColor_3_5 }">PC방</button>
             <button class="Bonus_btn Bonus_btn_margin" @click="Pass_3_5" :style="{ backgroundColor : PassStyleBack_3_5, color:PassStyleColor_3_5 }">PASS</button>

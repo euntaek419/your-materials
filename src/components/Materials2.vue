@@ -40,14 +40,14 @@
           </div>
 
           <div class="Input_box">
-            <label class="Gray"> 융합 개수
-              <input class="Need" maxlength='2' v-model="need_2">
+            <label class="Gray" title="제작할 융합 개수를 입력해주세요."> 융합 개수
+              <input class="Need" maxlength='2' v-model="need_2" title="제작할 융합 개수를 입력해주세요.">
             </label>
           </div>
 
           <div class="Input_box">
-            <label class="Gray"> 캐릭터 수   
-              <input class="Account" maxlength='2' v-model="account_2" placeholder="0" >
+            <label class="Gray" title="계정 귀속 캐릭터 수를 입력해주세요. (배럭)"> 캐릭터 수   
+              <input class="Account" maxlength='2' v-model="account_2" placeholder="0" title="계정 귀속 캐릭터 수를 입력해주세요. (배럭)">
             </label>
           </div>
 
