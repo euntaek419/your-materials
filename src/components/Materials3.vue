@@ -20,7 +20,7 @@
               <div class="Padding_box1">
                   <div class="Gray">{{ resultmax_3 }}</div>
                   <div class="Hide" >{{ Materials3_result0() }} </div>
-                  <div class="Big" >{{ Math.abs(resultweened_1.toFixed(0)) + ' 개' }} </div>
+                  <div class="Big" >{{ Math.abs(resultweened_3.toFixed(0)) + ' 개' }} </div>
               </div>
 
               <div class="Padding_box2">
