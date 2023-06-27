@@ -14,7 +14,7 @@ export default [
         name : '차원회랑',
         itemname : '흐릿한 기억의 조각',
         buyneed : 360, // 차원회랑 필요 재료
-        getitem : 54, // 3단 클리어시 획득 재료
+        getitem : 24, // 3단 클리어시 획득 재료
         shareitem : 36,
         getpc : 3,
         getpass : 3,
