@@ -5,8 +5,8 @@ export default [
         name : '이스핀즈',
         itemname : '사방의 분열된 기운',
         buyneed : 480, //이스핀즈 필요 재료
-        getitem : 96, // 3단 클리어시 획득 재료
-        shareitem : 24, //계정 귀속 재료
+        getitem : 32, // 3단 클리어시 획득 재료
+        shareitem : 48, //계정 귀속 재료
         getpc : 12, // 피시방
         getpass : 12, // 아라드패스
     },
@@ -16,8 +16,8 @@ export default [
         buyneed : 360, // 차원회랑 필요 재료
         getitem : 24, // 3단 클리어시 획득 재료
         shareitem : 36,
-        getpc : 3,
-        getpass : 3,
+        getpc : 9,
+        getpass : 9,
     },
     {
         name : '기계 혁명 : 개전',
