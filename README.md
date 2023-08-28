@@ -1,4 +1,4 @@
-# 홈페이지로 이동하기 : [(https://cet4713.cafe24.com/)](https://cet4713.cafe24.com/) 
+# 홈페이지로 이동하기 : [https://cet4713.cafe24.com/](https://cet4713.cafe24.com/) 
 ### * 스크롤을 통해 가로로 움직일 수 있습니다! *
 
 고려 중 사항
