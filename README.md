@@ -12,7 +12,7 @@
 ### 프로젝트 목적
 - 
 
-### 주요 기능
+### 프로젝트 기능
 - DNF 게임의 필요한 아이템 재료 개수 및 획득 주간 계산
 
 ### 개발환경 & 기술스택
@@ -23,8 +23,6 @@
   <img src='https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D'/>
   <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
 </div>
-
-### 사용 방법
 
 ### 프로젝트에서 잘한 부분
 
