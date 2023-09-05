@@ -1,4 +1,4 @@
-# 너의 재료는? [LINK]이동하기(https://cet4713.cafe24.com/) 
+# 너의 재료는? [LINK](https://cet4713.cafe24.com/) 
 
 ### 프로젝트 주제
 - DNF 게임의 아이템 정가 구매 계산기
