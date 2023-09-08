@@ -36,7 +36,7 @@
   <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
 </div>
 
-### Lighthouse Performance Score
+### Lighthouse Score
 ![너의 재료는 속도](https://github.com/euntaek419/your-materials/assets/100109284/4271b374-a9cf-4d88-bc55-a6ba45972086)
 
 ### 프로젝트에서 잘한 부분
@@ -49,7 +49,7 @@
 - 첫 프로젝트라 그런지 완성에만 집중했다.
 - 클린 코드를 제대로 고려하지 못했다.
 - css 작성 방법이 아직 많이 부족한 것 같다.
-- 데이터를 사용함에 있어 효율적이지 못한 구조를 가지고 있다. ( 리팩토링을 매우 고려중 )
+- 데이터를 사용함에 있어 클린 코드를 제대로 이루어내지 못했다. ( 리팩토링을 매우 고려중 )
 
 ---
 ### 고려 중 사항
