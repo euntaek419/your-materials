@@ -36,6 +36,12 @@
   <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
 </div>
 
+### Lighthouse Performance Score
+![너의 재료는 속도](https://github.com/euntaek419/your-materials/assets/100109284/4271b374-a9cf-4d88-bc55-a6ba45972086)
+
+
+![너의 재료는 속도](https://github.com/euntaek419/your-materials/assets/100109284/4271b374-a9cf-4d88-bc55-a6ba45972086)
+
 ### 프로젝트에서 잘한 부분
 - Vue.js의 첫 프로젝트로 작업했지만, 생각보다 결과물이 만족스럽게 나왔다.
 - 처음으로 시도해본 GSAP 숫자 카운트 기능을 정상적으로 잘 탑재하였다.
