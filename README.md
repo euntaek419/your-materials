@@ -37,7 +37,7 @@
 </div>
 
 ### Lighthouse Score
-![너의 재료는 속도](https://github.com/euntaek419/your-materials/assets/100109284/4271b374-a9cf-4d88-bc55-a6ba45972086)
+![Lighthouse score](https://github.com/euntaek419/your-materials/assets/100109284/8cf22163-e1d6-4d05-850f-c17055ba6a01)
 
 ### 프로젝트에서 잘한 부분
 - Vue.js의 첫 프로젝트로 작업했지만, 생각보다 결과물이 만족스럽게 나왔다.
