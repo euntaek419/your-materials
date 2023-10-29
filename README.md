@@ -1,6 +1,6 @@
 # 너의 재료는?
 
-###### 너의 재료는? [바로 가기](https://cet4713.cafe24.com/) ( 주소가 만료되었습니다. ) 
+###### 너의 재료는? [CloudFront 바로 가기](https://d33pay1yrazuf5.cloudfront.net/) / [URL 바로 가기](http://ssuegg.site/) 
 
 ### 프로젝트 주제
 - DNF 게임의 아이템 정가 구매 계산기
